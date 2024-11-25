@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Litepapers - Salvium Protocol</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!-- Favicons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/site.webmanifest">
+		<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#40E0D0">
+		<link rel="shortcut icon" href="favicon/favicon.ico">
+		<meta name="msapplication-TileColor" content="#0B272C">
+		<meta name="msapplication-config" content="favicon/browserconfig.xml">
+		<meta name="theme-color" content="#0B272C">
+		
+		<!-- Fonts and Styles -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link href="https://unpkg.com/tailwindcss@^2.2.19/dist/tailwind.min.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+		
+		<style>
+            @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+            
+            :root {
+                /* Primary Colors */
+                --color-primary: #40E0D0;
+                --color-primary-dark: #0AEB85;
+                --color-bg-dark: #0B272C;
+                --color-bg-darker: #0b272c9f;
+                --color-bg-header: rgba(53, 56, 73, 0.95);
+                --color-text: #ffffff;
+                --color-text-light: rgba(255, 255, 255, 0.55);
+                --color-text-lighter: rgba(255, 255, 255, 0.35);
+                --color-accent: #40E0D0;
+                --color-accent-light: #40E0D0;
+                --color-border: rgba(255, 255, 255, 0.15);
+                --color-border-light: rgba(255, 255, 255, 0.05);
+                --font-primary: "Josefin Sans", sans-serif;
+            }
+
+            * {
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            html, body {
+                overflow-x: hidden;
+                width: 100%;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            body {
+                padding-top: 30px;
+                font-family: var(--font-primary);
+                background-color: var(--color-bg-dark);
+                color: var(--color-text);
+                line-height: 1.6;
+                position: relative;
+            }
+
+            .nav-fixed {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 50;
+                background: linear-gradient(to bottom, rgb(11 39 44 / 19%), rgb(11 39 44 / 61%));
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                border-bottom: 1px solid rgba(64, 224, 208, 0.1);
+                transition: all 0.3s ease;
+            }
+
+            .nav-scrolled {
+                background: linear-gradient(to bottom, rgb(11 39 44 / 40%), rgb(11 39 44 / 80%));
+            }
+
+            .mobile-menu {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: linear-gradient(to bottom, rgb(11 39 44 / 90%), rgb(11 39 44 / 95%));
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                border-bottom: 1px solid rgba(64, 224, 208, 0.1);
+                z-index: 49;
+                padding: 1rem 0;
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+
+            .mobile-menu.active {
+                display: block;
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            @media (max-width: 768px) {
+                .mobile-menu .flex {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1.5rem;
+                }
+            }
+
+            nav {
+                background: rgba(11, 39, 44, 0.98);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(64, 224, 208, 0.1);
+            }
+
+            .gradient-text {
+                background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dark));
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+
+            .paper-card {
+                background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+                border: 1px solid rgba(64, 224, 208, 0.1);
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .paper-card::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, rgba(64, 224, 208, 0.2), transparent);
+                transform: scaleX(0);
+                transition: transform 0.4s;
+            }
+
+            .paper-card:hover {
+                transform: translateY(-5px);
+                border-color: rgba(64, 224, 208, 0.3);
+                box-shadow: 0 8px 32px rgba(64, 224, 208, 0.15);
+            }
+
+            .paper-card:hover::before {
+                transform: scaleX(1);
+            }
+
+            .paper-link {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                color: var(--color-primary);
+                transition: all 0.3s ease;
+                overflow: hidden;
+            }
+
+            .paper-link::after {
+                content: "";
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.3s ease;
+            }
+
+            .paper-link:hover {
+                color: var(--color-primary-dark);
+            }
+
+            .paper-link:hover::after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+
+            .paper-link svg {
+                transition: transform 0.3s ease;
+            }
+
+            .paper-link:hover svg {
+                transform: translateX(5px);
+            }
+        </style>
+	</head>
+	<body class="bg-[#0B272C]">
+		<!-- Particles Container -->
+		<div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
+
+		<!-- Header will be injected here -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+		<main class="relative z-10">
+			<div class="container mx-auto px-4 py-20">
+				<div class="text-center mb-12" data-aos="fade-up">
+					<h1 class="text-4xl md:text-5xl font-bold mb-4">Official <span class="gradient-text">Litepapers</span></h1>
+					<p class="text-xl text-gray-300">Official Salvium Protocol Documentation</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					<!-- English Version -->
+					<div class="paper-card rounded-xl p-8" data-aos="fade-up">
+						<h2 class="text-2xl font-bold mb-4">Salvium Protocol Litepaper (English)</h2>
+						<p class="text-gray-300 mb-6">A comprehensive overview of the Salvium Protocol, its architecture, and technical specifications.</p>
+						<a href="/wp-content/uploads/2024/07/salvium-litepaper-v1_0-english.pdf" class="paper-link inline-flex items-center">
+							<span>Read Litepaper</span>
+							<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+							</svg>
+						</a>
+					</div>
+
+					<!-- Chinese Version -->
+					<div class="paper-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="100">
+						<h2 class="text-2xl font-bold mb-4">Salvium Protocol Litepaper (Chinese)</h2>
+						<p class="text-gray-300 mb-6">A comprehensive overview of the Salvium Protocol, its architecture, and technical specifications.</p>
+						<a href="/wp-content/uploads/2024/07/salvium-litepaper-v1_0-chinese.pdf" class="paper-link inline-flex items-center">
+							<span>Read Litepaper</span>
+							<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+							</svg>
+						</a>
+					</div>
+
+					<!-- Japanese Version -->
+					<div class="paper-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="200">
+						<h2 class="text-2xl font-bold mb-4">Salvium Protocol Litepaper (Japanese)</h2>
+						<p class="text-gray-300 mb-6">A comprehensive overview of the Salvium Protocol, its architecture, and technical specifications.</p>
+						<a href="/wp-content/uploads/2024/07/salvium-litepaper-v1_0-japanese.pdf" class="paper-link inline-flex items-center">
+							<span>Read Litepaper</span>
+							<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+							</svg>
+						</a>
+					</div>
+
+					<!-- Korean Version -->
+					<div class="paper-card rounded-xl p-8" data-aos="fade-up">
+						<h2 class="text-2xl font-bold mb-4">Salvium Protocol Litepaper (Korean)</h2>
+						<p class="text-gray-300 mb-6">A comprehensive overview of the Salvium Protocol, its architecture, and technical specifications.</p>
+						<a href="/wp-content/uploads/2024/07/salvium-litepaper-v1_0-korean.pdf" class="paper-link inline-flex items-center">
+							<span>Read Litepaper</span>
+							<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+							</svg>
+						</a>
+					</div>
+
+					<!-- Spanish Version -->
+					<div class="paper-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="100">
+						<h2 class="text-2xl font-bold mb-4">Salvium Protocol Litepaper (Spanish)</h2>
+						<p class="text-gray-300 mb-6">A comprehensive overview of the Salvium Protocol, its architecture, and technical specifications.</p>
+						<a href="/wp-content/uploads/2024/07/salvium-litepaper-v1_0-spanish.pdf" class="paper-link inline-flex items-center">
+							<span>Read Litepaper</span>
+							<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+							</svg>
+						</a>
+					</div>
+
+					<!-- French Version -->
+					<div class="paper-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="200">
+						<h2 class="text-2xl font-bold mb-4">Salvium Protocol Litepaper (French)</h2>
+						<p class="text-gray-300 mb-6">A comprehensive overview of the Salvium Protocol, its architecture, and technical specifications.</p>
+						<a href="/wp-content/uploads/2024/07/salvium-litepaper-v1_0-french.pdf" class="paper-link inline-flex items-center">
+							<span>Read Litepaper</span>
+							<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- Footer will be injected here -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+		<script src="js/particles.js"></script>
+		<script src="js/header.js"></script>
+		<script src="js/footer.js"></script>
+		<script>
+			AOS.init({
+				duration: 800,
+				once: true
+			});
+		</script>
+	</body>
+</html>
+
+
+

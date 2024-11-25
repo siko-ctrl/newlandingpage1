@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Litepapers - Salvium Protocol</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+		<link rel="manifest" href="favicon_io/site.webmanifest">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" type="image/png" href="images/salvium-logo.png">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		<script src="https://cdn.tailwindcss.com"></script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Make all text white */
+			body, p, h1, h2, h3, h4, h5, h6, a:not(.special), .content p {
+				color: #ffffff !important;
+			}
+			
+			.major, article p {
+				color: #ffffff !important;
+			}
+			
+			#menu .links a {
+				color: #ffffff !important;
+			}
+
+			/* Turquoise menu button */
+			#header nav > a {
+				background-color: #40E0D0 !important;
+				color: white !important;
+			}
+
+			/* Hide social icon labels */
+			.social-icons .label {
+				display: none;
+			}
+
+			.features {
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				-moz-flex-wrap: wrap;
+				-webkit-flex-wrap: wrap;
+				-ms-flex-wrap: wrap;
+				flex-wrap: wrap;
+				margin: 0 0 2em -2em;
+				width: calc(100% + 2em);
+			}
+
+			.features article {
+				-moz-align-items: center;
+				-webkit-align-items: center;
+				-ms-align-items: center;
+				align-items: center;
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				margin: 0 0 2em 2em;
+				position: relative;
+				width: calc(33.33333% - 2em);
+				flex-direction: column;
+				text-align: center;
+				background: rgba(27, 31, 34, 0.85);
+				border-radius: 4px;
+				padding: 0;
+				overflow: hidden;
+			}
+
+			.features article .image {
+				height: 200px;
+				margin-bottom: 0;
+				width: 100%;
+			}
+
+			.features article .image img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				border-radius: 0;
+			}
+
+			.paper-content {
+				padding: 2em;
+				width: 100%;
+			}
+
+			.paper-table {
+				width: 100%;
+				margin: 0;
+			}
+
+			.paper-table td {
+				padding: 0.5em;
+				color: #ffffff;
+				text-align: left;
+				background: transparent;
+				border: none;
+			}
+
+			.paper-table td:first-child {
+				font-weight: bold;
+				width: 30%;
+			}
+
+			.download-button {
+				display: inline-block;
+				margin-top: 1em;
+				padding: 0.75em 2em;
+				background-color: transparent;
+				border: 2px solid #40E0D0;
+				color: #ffffff !important;
+				border-radius: 4px;
+				transition: all 0.2s ease-in-out;
+				text-decoration: none;
+				font-size: 0.9em;
+				font-weight: bold;
+				letter-spacing: 0.075em;
+				text-transform: uppercase;
+			}
+
+			.download-button:hover {
+				background-color: #40E0D0;
+				color: #ffffff !important;
+			}
+
+			@media screen and (max-width: 1280px) {
+				.features article {
+					width: calc(50% - 2em);
+				}
+			}
+
+			@media screen and (max-width: 736px) {
+				.features article {
+					width: calc(100% - 2em);
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+		<div id="page-wrapper">
+
+<!-- Header -->
+<header id="header" class="alt">
+    <h1><a href="index.html"><img src="images/salvium-logo.png" alt="Salvium Logo" style="height: 20px;"></a></h1>
+    <nav>
+        <a href="#menu">Menu</a>
+    </nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+    <div class="inner">
+        <h2>Menu</h2>
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="exchanges.html">Exchanges</a></li>
+            <li><a href="community.html">Community</a></li>
+        </ul>
+        <a href="#" class="close">Close</a>
+    </div>
+</nav>
+
+			<!-- Wrapper -->
+			<section id="wrapper">
+				<header>
+					<div class="inner">
+						<h2>Litepapers</h2>
+						<p>Official Salvium Protocol Documentation</p>
+					</div>
+				</header>
+
+				<!-- Content -->
+				<div class="wrapper">
+					<div class="inner">
+						<section class="features">
+							<!-- English Version -->
+							<article>
+								<a href="#" class="image"><img src="images/litepaper/english-litepaper.jpg" alt="English Version" /></a>
+								<div class="paper-content">
+									<table class="paper-table">
+										<tr>
+											<td>Title:</td>
+											<td>SALVIUM LITE PAPER V1.0</td>
+										</tr>
+										<tr>
+											<td>Version:</td>
+											<td>English Version</td>
+										</tr>
+									</table>
+									<a href="/wp-content/uploads/2024/07/salvium-litepaper-v1_0-english.pdf" class="download-button">Download PDF</a>
+								</div>
+							</article>
+
+							<!-- Chinese Version -->
+							<article>
+								<a href="#" class="image"><img src="images/litepaper/chinese-litepaper.jpg" alt="Chinese Version" /></a>
+								<div class="paper-content">
+									<table class="paper-table">
+										<tr>
+											<td>Title:</td>
+											<td>SALVIUM LITE PAPER V1.0</td>
+										</tr>
+										<tr>
+											<td>Version:</td>
+											<td>中文版</td>
+										</tr>
+									</table>
+									<a href="/wp-content/uploads/2024/07/salvium-litepaper-v1_0-chinese.pdf" class="download-button">Download PDF</a>
+								</div>
+							</article>
+
+							<!-- Japanese Version -->
+							<article>
+								<a href="#" class="image"><img src="images/litepaper/japanese-litepaper.jpg" alt="Japanese Version" /></a>
+								<div class="paper-content">
+									<table class="paper-table">
+										<tr>
+											<td>Title:</td>
+											<td>SALVIUM LITE PAPER V1.0</td>
+										</tr>
+										<tr>
+											<td>Version:</td>
+											<td>日本語版</td>
+										</tr>
+									</table>
+									<a href="/wp-content/uploads/2024/07/salvium-litepaper-v1_0-japanese.pdf" class="download-button">Download PDF</a>
+								</div>
+							</article>
+
+							<!-- Korean Version -->
+							<article>
+								<a href="#" class="image"><img src="images/litepaper/korean-litepaper.jpg" alt="Korean Version" /></a>
+								<div class="paper-content">
+									<table class="paper-table">
+										<tr>
+											<td>Title:</td>
+											<td>SALVIUM LITE PAPER V1.0</td>
+										</tr>
+										<tr>
+											<td>Version:</td>
+											<td>한국어 버전</td>
+										</tr>
+									</table>
+									<a href="/wp-content/uploads/2024/07/salvium-litepaper-v1_0-korean.pdf" class="download-button">Download PDF</a>
+								</div>
+							</article>
+
+							<!-- Spanish Version -->
+							<article>
+								<a href="#" class="image"><img src="images/litepaper/spanish-litepaper.jpg" alt="Spanish Version" /></a>
+								<div class="paper-content">
+									<table class="paper-table">
+										<tr>
+											<td>Title:</td>
+											<td>SALVIUM LITE PAPER V1.0</td>
+										</tr>
+										<tr>
+											<td>Version:</td>
+											<td>Versión en español</td>
+										</tr>
+									</table>
+									<a href="/wp-content/uploads/2024/07/salvium-litepaper-v1_0-spanish.pdf" class="download-button">Download PDF</a>
+								</div>
+							</article>
+
+							<!-- French Version -->
+							<article>
+								<a href="#" class="image"><img src="images/litepaper/french-litepaper.jpg" alt="French Version" /></a>
+								<div class="paper-content">
+									<table class="paper-table">
+										<tr>
+											<td>Title:</td>
+											<td>SALVIUM LITE PAPER V1.0</td>
+										</tr>
+										<tr>
+											<td>Version:</td>
+											<td>Version française</td>
+										</tr>
+									</table>
+									<a href="/wp-content/uploads/2024/07/salvium-litepaper-v1_0-french.pdf" class="download-button">Download PDF</a>
+								</div>
+							</article>
+						</section>
+					</div>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<div id="footer-placeholder"></div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/footer.js"></script>
+
+	</body>
+</html>

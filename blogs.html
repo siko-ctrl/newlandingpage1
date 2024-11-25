@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Salvium</title>
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#40E0D0">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#0B272C">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#0B272C">
+    
+    <!-- Fonts and Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --color-primary: #40E0D0;
+            --color-primary-dark: #0AEB85;
+            --color-bg-dark: #0B272C;
+            --color-bg-darker: #0b272c9f;
+            --color-text: #ffffff;
+            --font-primary: 'Josefin Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-bg-dark);
+            color: var(--color-text);
+            padding-top: 30px;
+        }
+
+        /* Navigation styles */
+        .nav-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: linear-gradient(to bottom, rgb(11 39 44 / 19%), rgb(11 39 44 / 61%));
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(64, 224, 208, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-scrolled {
+            background: linear-gradient(to bottom, rgb(11 39 44 / 40%), rgb(11 39 44 / 80%));
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to bottom, rgb(11 39 44 / 90%), rgb(11 39 44 / 95%));
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(64, 224, 208, 0.1);
+            padding: 1rem 0;
+            z-index: 40;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(64, 224, 208, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(64, 224, 208, 0.3);
+            box-shadow: 0 4px 20px rgba(64, 224, 208, 0.1);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-tag {
+            background: rgba(64, 224, 208, 0.1);
+            color: var(--color-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body class="bg-[#0B272C]">
+    <!-- Particles Container -->
+    <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- Header will be injected here -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+        <div class="container mx-auto px-4 py-20">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Latest Blog Posts</h1>
+                <p class="text-xl text-gray-300">Stay updated with the latest news, developments, and insights about Salvium Protocol.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Blog Card 1 -->
+                <div class="blog-card" data-aos="fade-up">
+                    <img src="images/pic04.jpg" alt="The Future of Private DeFi" class="blog-image">
+                    <div class="p-6">
+                        <span class="blog-tag">Technology</span>
+                        <h2 class="text-xl font-bold mt-4 mb-2">The Future of Private DeFi</h2>
+                        <p class="text-gray-400 mb-4">Exploring how Salvium Protocol is revolutionizing the intersection of privacy and decentralized finance. Learn about the latest developments in private transactions and yield generation.</p>
+                        <a href="#" class="text-[#40E0D0] hover:text-[#0AEB85] transition-colors">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/pic05.jpg" alt="Understanding Privacy Staking" class="blog-image">
+                    <div class="p-6">
+                        <span class="blog-tag">Development</span>
+                        <h2 class="text-xl font-bold mt-4 mb-2">Understanding Privacy Staking</h2>
+                        <p class="text-gray-400 mb-4">A deep dive into how Salvium's unique staking mechanism maintains privacy while generating yields. Discover the innovative approach to private staking.</p>
+                        <a href="#" class="text-[#40E0D0] hover:text-[#0AEB85] transition-colors">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/pic06.jpg" alt="Privacy in the Age of Regulation" class="blog-image">
+                    <div class="p-6">
+                        <span class="blog-tag">Community</span>
+                        <h2 class="text-xl font-bold mt-4 mb-2">Privacy in the Age of Regulation</h2>
+                        <p class="text-gray-400 mb-4">How Salvium Protocol balances privacy preservation with regulatory compliance in the evolving crypto landscape. Stay informed about the latest developments in crypto regulation.</p>
+                        <a href="#" class="text-[#40E0D0] hover:text-[#0AEB85] transition-colors">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 4 -->
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/pic07.jpg" alt="Community Updates: Q4 2023" class="blog-image">
+                    <div class="p-6">
+                        <span class="blog-tag">Community</span>
+                        <h2 class="text-xl font-bold mt-4 mb-2">Community Updates: Q4 2023</h2>
+                        <p class="text-gray-400 mb-4">Latest developments, milestones, and upcoming features in the Salvium ecosystem. Get insights into our roadmap and recent achievements.</p>
+                        <a href="#" class="text-[#40E0D0] hover:text-[#0AEB85] transition-colors">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+                <a href="#" class="text-[#40E0D0] hover:text-[#0AEB85] transition-colors">View All Posts</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be injected here -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads - Salvium</title>
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#40E0D0">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#0B272C">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#0B272C">
+    
+    <!-- Fonts and Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --color-primary: #40E0D0;
+            --color-primary-dark: #0AEB85;
+            --color-bg-dark: #0B272C;
+            --color-bg-darker: #0b272c9f;
+            --color-text: #ffffff;
+            --font-primary: 'Josefin Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-bg-dark);
+            color: var(--color-text);
+        }
+
+        .download-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(64, 224, 208, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(64, 224, 208, 0.3);
+            box-shadow: 0 4px 20px rgba(64, 224, 208, 0.1);
+        }
+
+        .download-icon {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(64, 224, 208, 0.2);
+        }
+
+        .platform-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+<body class="bg-[#0B272C]">
+    <!-- Particles Container -->
+    <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+        <section class="pt-32 pb-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Download Salvium</h1>
+                    <p class="text-xl text-gray-300">Get started with Salvium on your preferred platform</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Windows -->
+                    <div class="download-card rounded-xl p-8 text-center" data-aos="fade-up">
+                        <i class="fab fa-windows platform-icon"></i>
+                        <h2 class="text-2xl font-bold mb-4">Windows</h2>
+                        <p class="text-gray-300 mb-6">Download the latest version of Salvium for Windows</p>
+                        <div class="space-y-4">
+                            <a href="#" class="download-btn block">Download 64-bit</a>
+                            <a href="#" class="download-btn block">Download 32-bit</a>
+                        </div>
+                    </div>
+
+                    <!-- macOS -->
+                    <div class="download-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fab fa-apple platform-icon"></i>
+                        <h2 class="text-2xl font-bold mb-4">macOS</h2>
+                        <p class="text-gray-300 mb-6">Download the latest version of Salvium for macOS</p>
+                        <div class="space-y-4">
+                            <a href="#" class="download-btn block">Download Intel</a>
+                            <a href="#" class="download-btn block">Download Apple Silicon</a>
+                        </div>
+                    </div>
+
+                    <!-- Linux -->
+                    <div class="download-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fab fa-linux platform-icon"></i>
+                        <h2 class="text-2xl font-bold mb-4">Linux</h2>
+                        <p class="text-gray-300 mb-6">Download the latest version of Salvium for Linux</p>
+                        <div class="space-y-4">
+                            <a href="#" class="download-btn block">Download .deb</a>
+                            <a href="#" class="download-btn block">Download .rpm</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Apps -->
+                    <div class="download-card rounded-xl p-8 text-center" data-aos="fade-up">
+                        <i class="fas fa-mobile-alt platform-icon"></i>
+                        <h2 class="text-2xl font-bold mb-4">Mobile Apps</h2>
+                        <p class="text-gray-300 mb-6">Get Salvium on your mobile device</p>
+                        <div class="space-y-4">
+                            <a href="#" class="download-btn block">Download for iOS</a>
+                            <a href="#" class="download-btn block">Download for Android</a>
+                        </div>
+                    </div>
+
+                    <!-- Command Line -->
+                    <div class="download-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-terminal platform-icon"></i>
+                        <h2 class="text-2xl font-bold mb-4">Command Line</h2>
+                        <p class="text-gray-300 mb-6">For developers and advanced users</p>
+                        <div class="space-y-4">
+                            <a href="#" class="download-btn block">Download CLI Tools</a>
+                            <a href="#" class="download-btn block">View Documentation</a>
+                        </div>
+                    </div>
+
+                    <!-- Source Code -->
+                    <div class="download-card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fab fa-github platform-icon"></i>
+                        <h2 class="text-2xl font-bold mb-4">Source Code</h2>
+                        <p class="text-gray-300 mb-6">Build from source or contribute</p>
+                        <div class="space-y-4">
+                            <a href="#" class="download-btn block">View on GitHub</a>
+                            <a href="#" class="download-btn block">Download Source</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Resources -->
+                <div class="mt-16 text-center" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold mb-8">Additional Resources</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <a href="#" class="download-card rounded-xl p-6 text-center">
+                            <i class="fas fa-book download-icon"></i>
+                            <h3 class="text-xl font-bold mb-2">User Guide</h3>
+                            <p class="text-gray-300">Learn how to use Salvium</p>
+                        </a>
+                        <a href="#" class="download-card rounded-xl p-6 text-center">
+                            <i class="fas fa-tools download-icon"></i>
+                            <h3 class="text-xl font-bold mb-2">Developer Tools</h3>
+                            <p class="text-gray-300">Resources for developers</p>
+                        </a>
+                        <a href="#" class="download-card rounded-xl p-6 text-center">
+                            <i class="fas fa-question-circle download-icon"></i>
+                            <h3 class="text-xl font-bold mb-2">Support</h3>
+                            <p class="text-gray-300">Get help with installation</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>

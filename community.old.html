@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Salvium</title>
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#40E0D0">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#0B272C">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#0B272C">
+    
+    <!-- Fonts and Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --color-primary: #40E0D0;
+            --color-primary-dark: #0AEB85;
+            --color-bg-dark: #0B272C;
+            --color-bg-darker: #0b272c9f;
+            --color-text: #ffffff;
+            --font-primary: 'Josefin Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-bg-dark);
+            color: var(--color-text);
+        }
+
+        .social-icon {
+            font-size: 4em;
+            margin-bottom: 0.5em;
+            margin-top: .5em;
+            color: var(--color-primary) !important;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            color: var(--color-primary-dark) !important;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .features article {
+            flex: 1 1 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(64, 224, 208, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .features article:hover {
+            transform: translateY(-5px);
+            border-color: rgba(64, 224, 208, 0.3);
+            box-shadow: 0 4px 20px rgba(64, 224, 208, 0.1);
+        }
+
+        .button.large {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .button.large:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(64, 224, 208, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-[#0B272C]">
+    <!-- Particles Container -->
+    <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+        <section class="pt-32 pb-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Join Our Community</h1>
+                    <p class="text-xl text-gray-300">Be part of the Salvium ecosystem</p>
+                </div>
+
+                <section class="features" data-aos="fade-up" data-aos-delay="100">
+                    <article>
+                        <i class="fab fa-discord social-icon"></i>
+                        <div class="content">
+                            <h3 class="text-2xl font-bold mb-4">Discord</h3>
+                            <p class="mb-6">Join our Discord server to connect with the community, get support, and stay updated.</p>
+                            <a href="#" class="button large">Join Discord</a>
+                        </div>
+                    </article>
+
+                    <article>
+                        <i class="fab fa-telegram social-icon"></i>
+                        <div class="content">
+                            <h3 class="text-2xl font-bold mb-4">Telegram</h3>
+                            <p class="mb-6">Join our Telegram group for real-time discussions and announcements.</p>
+                            <a href="#" class="button large">Join Telegram</a>
+                        </div>
+                    </article>
+
+                    <article>
+                        <i class="fab fa-twitter social-icon"></i>
+                        <div class="content">
+                            <h3 class="text-2xl font-bold mb-4">Twitter</h3>
+                            <p class="mb-6">Follow us on Twitter for the latest news and updates.</p>
+                            <a href="#" class="button large">Follow Twitter</a>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>

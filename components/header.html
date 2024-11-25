@@ -1,0 +1,47 @@
+<header class="fixed w-full top-0 z-50 bg-[#0B272C]/80 backdrop-blur-lg border-b border-[#40E0D0]/10">
+    <nav class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <a href="/" class="flex items-center space-x-2">
+                <img src="/images/logo.png" alt="Salvium Logo" class="h-8 w-auto">
+                <span class="text-xl font-bold gradient-text">Salvium</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/" class="text-white/80 hover:text-[#40E0D0] transition-colors">Home</a>
+                <a href="/about" class="text-white/80 hover:text-[#40E0D0] transition-colors">About</a>
+                <a href="/blogs" class="text-white/80 hover:text-[#40E0D0] transition-colors">Blogs</a>
+                <a href="/faq" class="text-white/80 hover:text-[#40E0D0] transition-colors">FAQ</a>
+                <a href="/exchanges" class="text-white/80 hover:text-[#40E0D0] transition-colors">Exchanges</a>
+                <a href="/community" class="text-white/80 hover:text-[#40E0D0] transition-colors">Community</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="/app" class="btn-primary">Launch App</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button data-mobile-menu type="button" class="md:hidden" aria-expanded="false">
+                <span class="sr-only">Open menu</span>
+                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div data-mobile-menu-panel class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/" class="block px-3 py-2 text-white/80 hover:text-[#40E0D0] transition-colors">Home</a>
+                <a href="/about" class="block px-3 py-2 text-white/80 hover:text-[#40E0D0] transition-colors">About</a>
+                <a href="/blogs" class="block px-3 py-2 text-white/80 hover:text-[#40E0D0] transition-colors">Blogs</a>
+                <a href="/faq" class="block px-3 py-2 text-white/80 hover:text-[#40E0D0] transition-colors">FAQ</a>
+                <a href="/exchanges" class="block px-3 py-2 text-white/80 hover:text-[#40E0D0] transition-colors">Exchanges</a>
+                <a href="/community" class="block px-3 py-2 text-white/80 hover:text-[#40E0D0] transition-colors">Community</a>
+                <a href="/app" class="block px-3 py-2 btn-primary w-full text-center mt-4">Launch App</a>
+            </div>
+        </div>
+    </nav>
+</header>
