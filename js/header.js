@@ -35,21 +35,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     </style>
     <nav class="nav-fixed" style="background: linear-gradient(to bottom, rgba(40, 40, 40, 0.95), rgba(30, 30, 30, 0.98)); backdrop-filter: blur(8px);">
-        <div class="container mx-auto px-4 py-4">
+        <div class="container mx-auto px-4 py-0.5">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <a href="index.html" class="flex items-center space-x-2">
-                    <img src="images/salvium-logo.png" alt="Salvium Logo" class="h-5 opacity-100">
+                <a href="index.html" class="flex items-center">
+                    <img src="./images/salvium_wordmark_white_1024x1024px.svg" alt="Salvium Logo" class="w-24 opacity-100" style="height: auto;">
                 </a>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-white opacity-100 hover:text-[#40E0D0] transition-colors">Home</a>
-                    <a href="about.html" class="text-white opacity-100 hover:text-[#40E0D0] transition-colors">About</a>
-                    <a href="blogs.html" class="text-white opacity-100 hover:text-[#40E0D0] transition-colors">Blogs</a>
-                    <a href="faq.html" class="text-white opacity-100 hover:text-[#40E0D0] transition-colors">FAQ</a>
-                    <a href="exchanges.html" class="text-white opacity-100 hover:text-[#40E0D0] transition-colors">Exchanges</a>
-                    <a href="community.html" class="text-white opacity-100 hover:text-[#40E0D0] transition-colors">Community</a>
+                    <a href="index.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">Home</a>
+                    <a href="about.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">About</a>
+                    <a href="blogs.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">Blogs</a>
+                    <a href="faq.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">FAQ</a>
+                    <a href="exchanges.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">Exchanges</a>
+                    <a href="community.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">Community</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
