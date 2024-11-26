@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div class="text-center mb-8">
                     <img src="./images/salvium_coin_circle_white_solid.svg" alt="Salvium Logo" class="h-12 w-12 mb-6 mx-auto">
-                    <p class="text-white max-w-md mx-auto mb-6">Salvium is revolutionizing the crypto landscape with innovative solutions for secure and efficient trading.</p>
+                    <p class="text-white max-w-md mx-auto mb-6">Private blockchain with DeFi</p>
                     <!-- Social Icons -->
                     <div class="flex justify-center space-x-4">
                         <a href="https://twitter.com/SalviumProtocol" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#40E0D0] transition-colors">
