@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <!-- Social Icons -->
                     <div class="flex justify-center space-x-4">
                         <a href="https://twitter.com/SalviumProtocol" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#40E0D0] transition-colors">
-                            <i class="fa-brands fa-x text-white text-lg"></i>
+                            <i class="fa-brands fa-x-twitter text-white text-lg"></i>
                         </a>
                         <a href="https://t.me/salviumprotocol" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#40E0D0] transition-colors">
                             <i class="fa-brands fa-telegram text-white"></i>
