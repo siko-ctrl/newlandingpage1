@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Base - Salvium</title>
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#40E0D0">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#0B272C">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#0B272C">
+    
+    <!-- Fonts and Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --color-primary: #40E0D0;
+            --color-primary-dark: #0AEB85;
+            --color-bg-dark: #0B272C;
+            --color-bg-darker: #0b272c9f;
+            --color-text: #ffffff;
+            --font-primary: 'Josefin Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-bg-dark);
+            color: var(--color-text);
+        }
+
+        .kb-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(64, 224, 208, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .kb-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(64, 224, 208, 0.3);
+            box-shadow: 0 4px 20px rgba(64, 224, 208, 0.1);
+        }
+
+        .kb-icon {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .kb-link {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .kb-link:hover {
+            color: var(--color-primary-dark);
+        }
+    </style>
+</head>
+<body class="bg-[#0B272C]">
+    <!-- Particles Container -->
+    <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+        <section class="pt-32 pb-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Knowledge Base</h1>
+                    <p class="text-xl text-gray-300">Everything you need to know about Salvium</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Getting Started -->
+                    <div class="kb-card rounded-xl p-8" data-aos="fade-up">
+                        <i class="fas fa-rocket kb-icon"></i>
+                        <h2 class="text-2xl font-bold mb-4">Getting Started</h2>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="kb-link">What is Salvium?</a></li>
+                            <li><a href="#" class="kb-link">Creating a Wallet</a></li>
+                            <li><a href="#" class="kb-link">Buying Salvium</a></li>
+                            <li><a href="#" class="kb-link">Security Best Practices</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="kb-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-star kb-icon"></i>
+                        <h2 class="text-2xl font-bold mb-4">Features</h2>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="kb-link">Privacy Technology</a></li>
+                            <li><a href="#" class="kb-link">Staking Mechanism</a></li>
+                            <li><a href="#" class="kb-link">DeFi Integration</a></li>
+                            <li><a href="#" class="kb-link">Cross-chain Bridge</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Guides -->
+                    <div class="kb-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-book kb-icon"></i>
+                        <h2 class="text-2xl font-bold mb-4">Guides</h2>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="kb-link">Staking Tutorial</a></li>
+                            <li><a href="#" class="kb-link">Mining Guide</a></li>
+                            <li><a href="#" class="kb-link">DeFi User Guide</a></li>
+                            <li><a href="#" class="kb-link">Exchange Integration</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Technical -->
+                    <div class="kb-card rounded-xl p-8" data-aos="fade-up">
+                        <i class="fas fa-code kb-icon"></i>
+                        <h2 class="text-2xl font-bold mb-4">Technical</h2>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="kb-link">API Documentation</a></li>
+                            <li><a href="#" class="kb-link">Node Setup</a></li>
+                            <li><a href="#" class="kb-link">Smart Contracts</a></li>
+                            <li><a href="#" class="kb-link">Developer Tools</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Governance -->
+                    <div class="kb-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-landmark kb-icon"></i>
+                        <h2 class="text-2xl font-bold mb-4">Governance</h2>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="kb-link">Voting Process</a></li>
+                            <li><a href="#" class="kb-link">Proposal System</a></li>
+                            <li><a href="#" class="kb-link">Treasury Management</a></li>
+                            <li><a href="#" class="kb-link">Community Roles</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="kb-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-life-ring kb-icon"></i>
+                        <h2 class="text-2xl font-bold mb-4">Support</h2>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="kb-link">FAQs</a></li>
+                            <li><a href="#" class="kb-link">Troubleshooting</a></li>
+                            <li><a href="#" class="kb-link">Contact Support</a></li>
+                            <li><a href="#" class="kb-link">Community Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>

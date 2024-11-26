@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Base - Salvium</title>
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#40E0D0">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#0B272C">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#0B272C">
+    
+    <!-- Fonts and Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            /* Primary Colors */
+            --color-primary: #40E0D0;
+            --color-primary-dark: #0AEB85;
+
+            /* Background Colors */
+            --color-bg-dark: #0B272C;
+            --color-bg-darker: #0b272c9f;
+            --color-bg-header: rgba(53, 56, 73, 0.95);
+
+            /* Text Colors */
+            --color-text: #ffffff;
+            --color-text-light: rgba(255, 255, 255, 0.55);
+            --color-text-lighter: rgba(255, 255, 255, 0.35);
+
+            /* Accent Colors */
+            --color-accent: #40E0D0;
+            --color-accent-light: #40E0D0;
+
+            /* Border Colors */
+            --color-border: rgba(255, 255, 255, 0.15);
+            --color-border-light: rgba(255, 255, 255, 0.05);
+
+            /* Font */
+            --font-primary: 'Josefin Sans', sans-serif;
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            padding-top: 30px;
+            font-family: var(--font-primary);
+            background-color: var(--color-bg-dark);
+            color: var(--color-text);
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* Navigation styles */
+        .nav-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: linear-gradient(to bottom, rgb(11 39 44 / 19%), rgb(11 39 44 / 61%));
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(64, 224, 208, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-scrolled {
+            background: linear-gradient(to bottom, rgb(11 39 44 / 40%), rgb(11 39 44 / 80%));
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to bottom, rgb(11 39 44 / 90%), rgb(11 39 44 / 95%));
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .kb-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(64, 224, 208, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .kb-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(64, 224, 208, 0.3);
+            box-shadow: 0 4px 20px rgba(64, 224, 208, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-[#0B272C]">
+    <!-- Particles Container -->
+    <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- Header -->
+    <header>
+        <nav class="nav-fixed">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-300">
+                            <img src="./Salvium_assets/coin_icon/white/circular/transparent/salvium_coin_white_512x512px_transparent.png" alt="Salvium Icon" class="h-8 w-8">
+                            <img src="./Salvium_assets/wordmark_logo/white/transparent/salvium_wordmark_white_512x512px_transparent.png" alt="Salvium Logo" class="h-6">
+                        </a>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="index.html" class="text-white hover:text-[#0AEB85] transition-colors">Home</a>
+                        <a href="roadmap.html" class="text-white hover:text-[#0AEB85] transition-colors">Roadmap</a>
+                        <a href="#" class="text-[#0AEB85]">Knowledge Base</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-8" data-aos="fade-up">
+                Salvium <span class="gradient-text">Knowledge Base</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Your comprehensive guide to understanding Salvium's private blockchain and DeFi ecosystem.
+            </p>
+            <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <input type="text" placeholder="Search the knowledge base..." class="search-input w-full px-6 py-4 rounded-full text-white text-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Getting Started -->
+                <div class="kb-card rounded-xl p-8" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold mb-4">Getting Started</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">What is Salvium?</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Creating a Wallet</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Buying SAL Tokens</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Network Overview</a></li>
+                    </ul>
+                </div>
+
+                <!-- Technical Documentation -->
+                <div class="kb-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold mb-4">Technical Documentation</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Blockchain Architecture</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Privacy Technology</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Smart Contracts</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">API Documentation</a></li>
+                    </ul>
+                </div>
+
+                <!-- DeFi Features -->
+                <div class="kb-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-4">DeFi Features</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Staking Guide</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Liquidity Pools</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Yield Farming</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Private Transactions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Governance -->
+                <div class="kb-card rounded-xl p-8" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold mb-4">Governance</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">DAO Structure</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Voting Mechanism</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Proposal System</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Community Guidelines</a></li>
+                    </ul>
+                </div>
+
+                <!-- Security -->
+                <div class="kb-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold mb-4">Security</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Security Features</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Best Practices</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Privacy Protection</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Audit Reports</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="kb-card rounded-xl p-8" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-4">Support</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">FAQs</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Troubleshooting</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Contact Support</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#0AEB85] transition">Community Forum</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="./Salvium_assets/wordmark_logo/white/transparent/salvium_wordmark_white_512x512px_transparent.png" alt="Salvium Logo" style="height:80px;width:auto;" class="mb-8">
+                    <p class="text-gray-400">Private blockchain with DeFi</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://salvium.io/papers/" class="text-gray-400 hover:text-white">Litepaper</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">GitHub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Community</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Discord</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Telegram</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>
