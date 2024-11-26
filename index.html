@@ -63,7 +63,7 @@
         }
 
         body {
-            padding-top: 30px;
+            padding-top: 36px;
             font-family: Arial, sans-serif;
             background-color: var(--color-bg-dark);
             color: var(--color-text);
@@ -87,6 +87,9 @@
             -webkit-backdrop-filter: blur(8px);
             border-bottom: 1px solid rgba(64, 224, 208, 0.1);
             transition: all 0.3s ease;
+            height: 72px;
+            display: flex;
+            align-items: center;
         }
 
         .nav-scrolled {
@@ -96,7 +99,7 @@
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 80px;
+            top: 72px;
             left: 0;
             right: 0;
             background: linear-gradient(to bottom, rgb(11 39 44 / 90%), rgb(11 39 44 / 95%));
@@ -264,7 +267,34 @@
     <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
     
     <!-- Header will be injected here -->
-    <div id="header"></div>
+    <div id="header">
+        <div class="container mx-auto px-2 py-0">
+            <div class="flex justify-between items-center h-8">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <img src="./images/salvium_wordmark_white_1024x1024px.svg" alt="Salvium Logo" class="w-16 opacity-100" style="height: auto;">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-4 text-sm">
+                    <a href="index.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">Home</a>
+                    <a href="about.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">About</a>
+                    <a href="blogs.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">Blogs</a>
+                    <a href="faq.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">FAQ</a>
+                    <a href="exchanges.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">Exchanges</a>
+                    <a href="community.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">Community</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden mobile-menu-button focus:outline-none z-50">
+                    <svg class="w-4 h-4 text-white opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path class="menu-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path class="menu-close hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main class="relative z-10">
