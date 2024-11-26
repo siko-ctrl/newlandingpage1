@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h4 class="text-lg font-semibold mb-4">Tools</h4>
                     <ul class="space-y-2">
                         <li><a href="download.html" class="text-gray-400 hover:text-[#40E0D0]">Wallets</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-[#40E0D0]">Explorer</a></li>
+                        <li><a href="https://explorer.salvium.io/" class="text-gray-400 hover:text-[#40E0D0]">Explorer</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-[#40E0D0]">Stats</a></li>
                         <li><a href="tools.html" class="text-gray-400 hover:text-[#40E0D0]">3rd Party Tools</a></li>
                     </ul>
