@@ -6,13 +6,13 @@
     <title>Salvium - Decentralized Finance Innovation</title>
     
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="favicon_io/site.webmanifest">
-    <link rel="shortcut icon" href="favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
     <meta name="msapplication-TileColor" content="#0B272C">
-    <meta name="msapplication-config" content="favicon_io/browserconfig.xml">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
     <meta name="theme-color" content="#0B272C">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,11 +48,26 @@
             --color-border-light: rgba(255, 255, 255, 0.05);
 
             /* Font */
-            --font-primary: 'Josefin Sans', sans-serif;
+            --font-title: 'Josefin Sans', sans-serif;
+            --font-body: Arial, sans-serif;
         }
 
         * {
             -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Force navigation colors */
+        .nav-fixed .dropdown-button,
+        .nav-fixed .dropdown-menu a,
+        .mobile-menu a,
+        .mobile-menu div {
+            color: #40E0D0 !important;
+        }
+
+        .nav-fixed .dropdown-button:hover,
+        .nav-fixed .dropdown-menu a:hover,
+        .mobile-menu a:hover {
+            color: rgba(64, 224, 208, 0.8) !important;
         }
 
         html, body {
@@ -64,15 +79,19 @@
 
         body {
             padding-top: 36px;
-            font-family: Arial, sans-serif;
+            font-family: var(--font-body);
             background-color: var(--color-bg-dark);
             color: var(--color-text);
             line-height: 1.6;
             position: relative;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-primary);
+        h1, h2, h3, h4, h5, h6, .gradient-text {
+            font-family: var(--font-title);
+        }
+
+        p, a, span, div, button {
+            font-family: var(--font-body);
         }
 
         /* Navigation styles */
@@ -130,7 +149,7 @@
         /* Hero section styles */
         .hero-gradient {
             position: relative;
-            min-height: 100vh;
+            min-height: 66vh;
             padding-top: 80px;
             overflow: hidden;
             background: var(--color-bg-dark);
@@ -274,34 +293,7 @@
     <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
     
     <!-- Header will be injected here -->
-    <div id="header">
-        <div class="container mx-auto px-2 py-0">
-            <div class="flex justify-between items-center h-8">
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center">
-                    <img src="./images/salvium_wordmark_white_1024x1024px.svg" alt="Salvium Logo" class="w-16 opacity-100" style="height: auto;">
-                </a>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-4 text-sm">
-                    <a href="index.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">Home</a>
-                    <a href="about.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">About</a>
-                    <a href="blogs.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">Blogs</a>
-                    <a href="faq.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">FAQ</a>
-                    <a href="exchanges.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">Exchanges</a>
-                    <a href="community.html" class="text-[#40E0D0] opacity-100 hover:text-[#40E0D0]/80 transition-colors">Community</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden mobile-menu-button focus:outline-none z-50">
-                    <svg class="w-4 h-4 text-white opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path class="menu-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        <path class="menu-close hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
+    <div id="header"></div>
 
     <!-- Main Content -->
     <main class="relative z-10">
@@ -320,34 +312,28 @@
                             Experience true financial privacy with Salvium's innovative blockchain technology.
                         </p>
                         <div class="flex flex-wrap gap-3 mb-8 md:mb-12 mobile-stack justify-center lg:justify-start">
-                            <a href="#" class="btn-primary px-6 md:px-8 py-3 rounded-full text-black font-semibold inline-block mobile-full lg:w-auto">
+                            <a href="#" class="btn-primary px-6 md:px-8 py-3 rounded-full text-black font-semibold inline-block mobile-full md:w-[45%] lg:w-auto">
                                 Get Started
                             </a>
-                            <a href="knowledge-base.html" class="px-6 md:px-8 py-3 rounded-full border border-[#40E0D0] text-white font-semibold inline-block hover:bg-[#40E0D0] hover:text-black transition duration-300 mobile-full lg:w-auto">
+                            <a href="knowledge-base.html" class="px-6 md:px-8 py-3 rounded-full border border-[#40E0D0] text-white hover:bg-[#40E0D0]/10 transition-colors font-semibold inline-block mobile-full md:w-[45%] lg:w-auto">
                                 Learn More
                             </a>
                         </div>
                         <!-- Trust indicators -->
                         <div class="flex flex-wrap gap-4 xs:gap-6 sm:gap-8 items-center justify-center lg:justify-start text-white mt-6 sm:mt-8">
                             <div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#40E0D0]/5 transition-colors">
-                                <img src="./Salvium_assets/shield-icon.svg" alt="Security" class="w-8 h-8 sm:w-9 sm:h-9">
-                                <span class="text-lg sm:text-xl font-medium whitespace-nowrap opacity-100">Secure</span>
-                            </div>
-                            <div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#40E0D0]/5 transition-colors">
                                 <img src="./Salvium_assets/lock-icon.svg" alt="Private" class="w-8 h-8 sm:w-9 sm:h-9">
                                 <span class="text-lg sm:text-xl font-medium whitespace-nowrap opacity-100">Private</span>
                             </div>
                             <div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#40E0D0]/5 transition-colors">
-                                <img src="./Salvium_assets/speed-icon.svg" alt="Fast" class="w-8 h-8 sm:w-9 sm:h-9">
-                                <span class="text-lg sm:text-xl font-medium whitespace-nowrap opacity-100">Fast</span>
+                                <img src="./Salvium_assets/shield-icon.svg" alt="Compliant" class="w-8 h-8 sm:w-9 sm:h-9">
+                                <span class="text-lg sm:text-xl font-medium whitespace-nowrap opacity-100">Compliant</span>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="relative mobile-mt" data-aos="fade-left">
-                        <div class="relative z-20 flex justify-center items-center mb-8">
-                            <div class="floating bg-[#181818] rounded-full p-3 md:p-4" style="transform-origin: center center;">
-                                <img src="./images/salvium_coin_square_white_512x512px_transparent.png" alt="Salvium Icon" class="w-32 h-32 md:w-40 md:h-40 mobile-logo">
+                            <div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#40E0D0]/5 transition-colors">
+                                <div class="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center" style="color: #40E0D0;">
+                                    <i class="fa-solid fa-network-wired text-2xl"></i>
+                                </div>
+                                <span class="text-lg sm:text-xl font-medium whitespace-nowrap opacity-100">DeFi</span>
                             </div>
                         </div>
                     </div>
@@ -362,37 +348,52 @@
                     <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">
                         Why Choose <span class="gradient-text">Salvium</span>
                     </h2>
-                    <p class="text-xl text-gray-300 mb-6 md:mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-lg text-gray-300 mb-6 md:mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
                         Experience the next generation of private, secure, and efficient decentralized finance.
                     </p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Privacy Feature -->
-                    <div class="feature-card p-8 bg-[#0b272c4d] border border-[#40E0D0]/10 rounded-2xl hover:border-[#40E0D0]/30 hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                        <div class="feature-icon mb-6 bg-[#40E0D0]/5 w-16 h-16 rounded-xl flex items-center justify-center hover:bg-[#40E0D0]/10 transition-colors">
-                            <img src="./images/icons/privacy.svg" alt="Privacy" class="w-8 h-8">
+                    <div class="feature-card bg-[#0b272c4d] border border-[#40E0D0]/10 rounded-md hover:border-[#40E0D0]/30 hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-full h-48 overflow-hidden rounded-t-md">
+                            <img src="./images/newimages/Page Headers/Litepaper Header.jpg" alt="Privacy Feature" class="w-full h-full object-cover">
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4">Complete Privacy</h3>
-                        <p class="text-gray-300">Your transactions are fully protected with cutting-edge cryptography and zero-knowledge proofs.</p>
+                        <div class="p-8">
+                            <div class="feature-icon mb-6 bg-[#40E0D0]/5 w-16 h-16 rounded-md flex items-center justify-center hover:bg-[#40E0D0]/10 transition-colors">
+                                <img src="./images/icons/privacy.svg" alt="Privacy" class="w-8 h-8">
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-4">Complete Privacy</h3>
+                            <p class="text-gray-300">Your transactions are fully protected with cutting-edge cryptography and zero-knowledge proofs.</p>
+                        </div>
                     </div>
                     
                     <!-- Security Feature -->
-                    <div class="feature-card p-8 bg-[#0b272c4d] border border-[#40E0D0]/10 rounded-2xl hover:border-[#40E0D0]/30 hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                        <div class="feature-icon mb-6 bg-[#40E0D0]/5 w-16 h-16 rounded-xl flex items-center justify-center hover:bg-[#40E0D0]/10 transition-colors">
-                            <img src="./images/icons/security.svg" alt="Security" class="w-8 h-8">
+                    <div class="feature-card bg-[#0b272c4d] border border-[#40E0D0]/10 rounded-md hover:border-[#40E0D0]/30 hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-full h-48 overflow-hidden rounded-t-md">
+                            <img src="./images/newimages/Page Headers/Exchange Header.png" alt="Security Feature" class="w-full h-full object-cover">
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4">Enhanced Security</h3>
-                        <p class="text-gray-300">Built on a robust blockchain with industry-leading security measures and audited smart contracts.</p>
+                        <div class="p-8">
+                            <div class="feature-icon mb-6 bg-[#40E0D0]/5 w-16 h-16 rounded-md flex items-center justify-center hover:bg-[#40E0D0]/10 transition-colors">
+                                <img src="./images/icons/security.svg" alt="Security" class="w-8 h-8">
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-4">Enhanced Security</h3>
+                            <p class="text-gray-300">Built on a robust blockchain with industry-leading security measures and audited smart contracts.</p>
+                        </div>
                     </div>
                     
                     <!-- Speed Feature -->
-                    <div class="feature-card p-8 bg-[#0b272c4d] border border-[#40E0D0]/10 rounded-2xl hover:border-[#40E0D0]/30 hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                        <div class="feature-icon mb-6 bg-[#40E0D0]/5 w-16 h-16 rounded-xl flex items-center justify-center hover:bg-[#40E0D0]/10 transition-colors">
-                            <img src="./images/icons/speed.svg" alt="Speed" class="w-8 h-8">
+                    <div class="feature-card bg-[#0b272c4d] border border-[#40E0D0]/10 rounded-md hover:border-[#40E0D0]/30 hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-full h-48 overflow-hidden rounded-t-md">
+                            <img src="./images/newimages/Page Headers/Pools Header.jpg" alt="Speed Feature" class="w-full h-full object-cover">
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4">Lightning Fast</h3>
-                        <p class="text-gray-300">Experience near-instant transactions with our optimized Layer 2 scaling solution.</p>
+                        <div class="p-8">
+                            <div class="feature-icon mb-6 bg-[#40E0D0]/5 w-16 h-16 rounded-md flex items-center justify-center hover:bg-[#40E0D0]/10 transition-colors">
+                                <img src="./images/icons/speed.svg" alt="Speed" class="w-8 h-8">
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-4">Lightning Fast</h3>
+                            <p class="text-gray-300">Experience near-instantaneous transaction speeds with our optimized protocol.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -408,14 +409,14 @@
                     <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">
                         Salvium <span class="gradient-text">Ecosystem</span>
                     </h2>
-                    <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
                         A comprehensive suite of tools and features designed for the future of private finance.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- DeFi Innovation -->
-                    <div class="p-8 bg-[#0b272c9f] border border-[#40E0D0]/10" data-aos="fade-right">
+                    <div class="p-8 bg-[#0b272c9f] border border-[#40E0D0]/10 rounded-md" data-aos="fade-right">
                         <div class="flex items-center gap-4 mb-6">
                             <div class="w-12 h-12 flex items-center justify-center icon-container">
                                 <i class="fas fa-layer-group text-[#40E0D0] text-2xl"></i>
@@ -440,7 +441,7 @@
                     </div>
 
                     <!-- Technical Features -->
-                    <div class="p-8 bg-[#0b272c9f] border border-[#40E0D0]/10" data-aos="fade-left">
+                    <div class="p-8 bg-[#0b272c9f] border border-[#40E0D0]/10 rounded-md" data-aos="fade-left">
                         <div class="flex items-center gap-4 mb-6">
                             <div class="w-12 h-12 flex items-center justify-center icon-container">
                                 <i class="fas fa-code-branch text-[#40E0D0] text-2xl"></i>
@@ -468,68 +469,76 @@
                 <!-- Additional Feature Cards -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-8" data-aos="fade-up" data-aos-delay="100">
                     <!-- Feature Cards -->
-                    <div class="ecosystem-card">
-                        <div class="ecosystem-card-header"></div>
+                    <div class="ecosystem-card rounded-md">
+                        <div class="w-full h-48 overflow-hidden rounded-t-md">
+                            <img src="./images/newimages/Blog Page/Blog Thumbs - No Text/Blog - No Text.jpg" alt="Future of Private DeFi" class="w-full h-full object-cover">
+                        </div>
                         <div class="p-4 sm:p-6">
-                            <h3 class="text-xl font-semibold mb-2 sm:mb-3 text-[#40E0D0]">The Future of Private DeFi</h3>
-                            <p class="text-gray-300 mb-3 sm:mb-4 text-sm">
+                            <h3 class="text-lg font-semibold mb-2 sm:mb-3 text-[#40E0D0]">The Future of Private DeFi</h3>
+                            <p class="text-gray-300 mb-3 sm:mb-4 text-sm" style="font-family: Arial, sans-serif;">
                                 Exploring how Salvium Protocol is revolutionizing the intersection of privacy and decentralized finance.
                             </p>
-                            <a href="#" class="text-[#40E0D0] hover:text-[#40E0D0]/80 text-sm inline-flex items-center transition-colors">
-                                Read More
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                </svg>
-                            </a>
+                            <div class="text-right">
+                                <a href="#" style="color: #40E0D0;" class="hover:text-[#40E0D0]/80 text-sm inline-flex items-center transition-colors">
+                                    Read More
+                                    <i class="fa-solid fa-chevron-right ml-1"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- More Feature Cards -->
-                    <div class="ecosystem-card">
-                        <div class="ecosystem-card-header"></div>
+                    <div class="ecosystem-card rounded-md">
+                        <div class="w-full h-48 overflow-hidden rounded-t-md">
+                            <img src="./images/newimages/Blog Page/Blog Thumbs - No Text/Treasury Report No Text.jpg" alt="Understanding Privacy Staking" class="w-full h-full object-cover">
+                        </div>
                         <div class="p-4 sm:p-6">
-                            <h3 class="text-xl font-semibold mb-2 sm:mb-3 text-[#40E0D0]">Understanding Privacy Staking</h3>
-                            <p class="text-gray-300 mb-3 sm:mb-4 text-sm">
+                            <h3 class="text-lg font-semibold mb-2 sm:mb-3 text-[#40E0D0]">Understanding Privacy Staking</h3>
+                            <p class="text-gray-300 mb-3 sm:mb-4 text-sm" style="font-family: Arial, sans-serif;">
                                 A deep dive into how Salvium's unique staking mechanism maintains privacy while generating yields.
                             </p>
-                            <a href="#" class="text-[#40E0D0] hover:text-[#40E0D0]/80 text-sm inline-flex items-center transition-colors">
-                                Read More
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                </svg>
-                            </a>
+                            <div class="text-right">
+                                <a href="#" style="color: #40E0D0;" class="hover:text-[#40E0D0]/80 text-sm inline-flex items-center transition-colors">
+                                    Read More
+                                    <i class="fa-solid fa-chevron-right ml-1"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="ecosystem-card">
-                        <div class="ecosystem-card-header"></div>
+                    <div class="ecosystem-card rounded-md">
+                        <div class="w-full h-48 overflow-hidden rounded-t-md">
+                            <img src="./images/newimages/Blog Page/Blog Thumbs - No Text/AMA No Text.jpg" alt="Privacy in the Age of Regulation" class="w-full h-full object-cover">
+                        </div>
                         <div class="p-4 sm:p-6">
-                            <h3 class="text-xl font-semibold mb-2 sm:mb-3 text-[#40E0D0]">Privacy in the Age of Regulation</h3>
-                            <p class="text-gray-300 mb-3 sm:mb-4 text-sm">
+                            <h3 class="text-lg font-semibold mb-2 sm:mb-3 text-[#40E0D0]">Privacy in the Age of Regulation</h3>
+                            <p class="text-gray-300 mb-3 sm:mb-4 text-sm" style="font-family: Arial, sans-serif;">
                                 How Salvium Protocol balances privacy preservation with regulatory compliance in the evolving crypto landscape.
                             </p>
-                            <a href="#" class="text-[#40E0D0] hover:text-[#40E0D0]/80 text-sm inline-flex items-center transition-colors">
-                                Read More
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                </svg>
-                            </a>
+                            <div class="text-right">
+                                <a href="#" style="color: #40E0D0;" class="hover:text-[#40E0D0]/80 text-sm inline-flex items-center transition-colors">
+                                    Read More
+                                    <i class="fa-solid fa-chevron-right ml-1"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="ecosystem-card">
-                        <div class="ecosystem-card-header"></div>
+                    <div class="ecosystem-card rounded-md">
+                        <div class="w-full h-48 overflow-hidden rounded-t-md">
+                            <img src="./images/newimages/Blog Page/Blog Thumbs - No Text/Listing or Partnership No Text.jpg" alt="Community Updates" class="w-full h-full object-cover">
+                        </div>
                         <div class="p-4 sm:p-6">
-                            <h3 class="text-xl font-semibold mb-2 sm:mb-3 text-[#40E0D0]">Community Updates: Q4 2023</h3>
-                            <p class="text-gray-300 mb-3 sm:mb-4 text-sm">
+                            <h3 class="text-lg font-semibold mb-2 sm:mb-3 text-[#40E0D0]">Community Updates: Q4 2023</h3>
+                            <p class="text-gray-300 mb-3 sm:mb-4 text-sm" style="font-family: Arial, sans-serif;">
                                 Latest developments, milestones, and upcoming features in the Salvium ecosystem.
                             </p>
-                            <a href="#" class="text-[#40E0D0] hover:text-[#40E0D0]/80 text-sm inline-flex items-center transition-colors">
-                                Read More
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                </svg>
-                            </a>
+                            <div class="text-right">
+                                <a href="#" style="color: #40E0D0;" class="hover:text-[#40E0D0]/80 text-sm inline-flex items-center transition-colors">
+                                    Read More
+                                    <i class="fa-solid fa-chevron-right ml-1"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -548,7 +557,7 @@
                 <h2 class="text-4xl font-bold mb-8" data-aos="fade-up">
                     Ready to Take the <span class="gradient-text">Pill</span>?
                 </h2>
-                <p class="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-lg text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="100">
                     Start your journey with Salvium today and be part of the next generation of Private DeFi.
                 </p>
                 <button class="btn-primary px-12 py-4 rounded-full text-black font-semibold inline-block" data-aos="fade-up" data-aos-delay="200">
@@ -565,7 +574,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="js/particles.js"></script>
     <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
+    <script src="js/footer.js?v=1"></script>
     <script>
         AOS.init({
             duration: 800,

@@ -4,21 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div class="text-center mb-8">
-                    <img src="./images/salvium_coin_circle_white_solid.svg" alt="Salvium Logo" class="h-12 w-12 mb-6 mx-auto">
+                    <img src="./images/salvium_coin_square_white_512x512px_transparent.png" alt="Salvium Logo" style="height: 80px; width: auto;" class="mb-6 mx-auto">
                     <p class="text-white max-w-md mx-auto mb-6">Private blockchain with DeFi</p>
                     <!-- Social Icons -->
-                    <div class="flex justify-center space-x-4">
-                        <a href="https://twitter.com/SalviumProtocol" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#40E0D0] transition-colors">
-                            <i class="fa-brands fa-x-twitter text-white text-lg"></i>
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://twitter.com/SalviumProtocol" class="hover:opacity-80 transition-opacity">
+                            <i class="fa-brands fa-x-twitter text-2xl" style="color: #40E0D0 !important;"></i>
                         </a>
-                        <a href="https://t.me/salviumprotocol" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#40E0D0] transition-colors">
-                            <i class="fa-brands fa-telegram text-white"></i>
+                        <a href="https://t.me/salviumprotocol" class="hover:opacity-80 transition-opacity">
+                            <i class="fa-brands fa-telegram text-2xl" style="color: #40E0D0 !important;"></i>
                         </a>
-                        <a href="https://discord.gg/salvium" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#40E0D0] transition-colors">
-                            <i class="fa-brands fa-discord text-white"></i>
+                        <a href="https://discord.gg/salvium" class="hover:opacity-80 transition-opacity">
+                            <i class="fa-brands fa-discord text-2xl" style="color: #40E0D0 !important;"></i>
                         </a>
-                        <a href="https://github.com/salvium" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#40E0D0] transition-colors">
-                            <i class="fa-brands fa-github text-white"></i>
+                        <a href="https://github.com/salvium" class="hover:opacity-80 transition-opacity">
+                            <i class="fa-brands fa-github text-2xl" style="color: #40E0D0 !important;"></i>
                         </a>
                     </div>
                 </div>
@@ -57,6 +57,15 @@ document.addEventListener('DOMContentLoaded', function() {
     </footer>
     `;
 
-    // Insert footer HTML
-    document.getElementById('footer').innerHTML = footerHtml;
+    // Remove any existing footer
+    const existingFooter = document.querySelector('footer');
+    if (existingFooter) {
+        existingFooter.remove();
+    }
+
+    // Insert the new footer
+    const footerContainer = document.getElementById('footer');
+    if (footerContainer) {
+        footerContainer.innerHTML = footerHtml;
+    }
 });
