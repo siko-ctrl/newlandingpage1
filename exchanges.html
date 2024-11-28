@@ -23,23 +23,78 @@
     
     <style>
         :root {
+            /* Primary Colors */
             --color-primary: #40E0D0;
             --color-primary-dark: #0AEB85;
+
+            /* Background Colors */
             --color-bg-dark: #0B272C;
-            --color-bg-darker: #0b272c9f;
+            --color-bg-darker: #0B272C;
+            --color-bg-header: #0B272C;
+
+            /* Text Colors */
             --color-text: #ffffff;
+            --color-text-light: #ffffff;
+            --color-text-lighter: #ffffff;
+
+            /* Accent Colors */
+            --color-accent: #40E0D0;
+            --color-accent-light: #40E0D0;
+
+            /* Border Colors */
+            --color-border: rgba(255, 255, 255, 0.15);
+            --color-border-light: rgba(255, 255, 255, 0.05);
+
+            /* Font */
             --font-title: 'Josefin Sans', sans-serif;
             --font-body: Arial, sans-serif;
         }
 
-        body {
-            font-family: var(--font-body);
-            background-color: var(--color-bg-dark);
-            color: var(--color-text);
+        * {
+            -webkit-tap-highlight-color: transparent;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
             font-family: var(--font-title);
+            background-color: var(--color-bg-dark);
+            color: var(--color-text);
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .exchange-card {
+            background: rgba(11, 39, 44, 0.8);
+            border: 1px solid rgba(64, 224, 208, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .exchange-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(64, 224, 208, 0.3);
+            box-shadow: 0 10px 20px rgba(64, 224, 208, 0.1);
+        }
+
+        .gradient-button {
+            background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dark));
+            color: #000;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .gradient-button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
         }
 
         .gradient-text {
@@ -47,15 +102,6 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            font-family: var(--font-title);
-        }
-
-        .mobile-menu {
-            display: none;
-        }
-
-        .mobile-menu.active {
-            display: block;
         }
     </style>
 </head>
@@ -63,6 +109,7 @@
 <body class="bg-[#0B272C]">
     <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
     <div id="header"></div>
+    
     <main class="relative z-10 pt-32">
         <div class="container mx-auto px-4 mb-24">
             <div class="text-center mb-16 relative">
@@ -77,35 +124,106 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card rounded-xl p-8 text-center" data-aos="fade-up">
-                    <img src="images/exchanges/SevenSeas-widget.png" alt="Seven Seas" class="h-16 mx-auto mb-6">
-                    <h2 class="text-2xl font-bold mb-4">Seven Seas</h2>
-                    <p class="text-gray-300 mb-6">Trading Pair: SAL/USDT</p>
-                    <a href="https://www.sevenseas.exchange" target="_blank" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-white rounded-lg hover:opacity-90 transition-opacity">Trade on Seven Seas</a>
+                <!-- Seven Seas -->
+                <div class="exchange-card rounded-lg p-8" data-aos="fade-up">
+                    <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                        <img src="images/exchanges/SevenSeas-widget.png" alt="Seven Seas" class="w-full h-full object-contain">
+                    </div>
+                    <h2 class="text-2xl font-semibold mb-4 text-white text-center">Seven Seas</h2>
+                    <div class="bg-[#40E0D0]/5 rounded-lg p-4 mb-6 border border-[#40E0D0]/10">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400">Trading Pair</span>
+                            <span class="text-[#40E0D0] font-semibold">SAL/USDT</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://www.sevenseas.exchange" target="_blank" class="gradient-button inline-block">
+                            Trade Now
+                        </a>
+                    </div>
                 </div>
-                <div class="card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <img src="images/exchanges/TradeOgre-widget.png" alt="TradeOgre" class="h-16 mx-auto mb-6">
-                    <h2 class="text-2xl font-bold mb-4">TradeOgre</h2>
-                    <p class="text-gray-300 mb-6">Trading Pair: SAL/USDT</p>
-                    <a href="https://tradeogre.com/exchange/SAL-USDT" target="_blank" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-white rounded-lg hover:opacity-90 transition-opacity">Trade on TradeOgre</a>
+
+                <!-- TradeOgre -->
+                <div class="exchange-card rounded-lg p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                        <img src="images/exchanges/TradeOgre-widget.png" alt="TradeOgre" class="w-full h-full object-contain">
+                    </div>
+                    <h2 class="text-2xl font-semibold mb-4 text-white text-center">TradeOgre</h2>
+                    <div class="bg-[#40E0D0]/5 rounded-lg p-4 mb-6 border border-[#40E0D0]/10">
+                        <div class="flex justify-between items-center mb-3 pb-2 border-b border-[#40E0D0]/10">
+                            <span class="text-gray-400">Trading Pair 1</span>
+                            <span class="text-[#40E0D0] font-semibold">SAL/USDT</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400">Trading Pair 2</span>
+                            <span class="text-[#40E0D0] font-semibold">SAL/BTC</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://tradeogre.com/exchange/SAL-USDT" target="_blank" class="gradient-button inline-block mb-3">
+                            Trade SAL/USDT
+                        </a>
+                        <a href="https://tradeogre.com/exchange/SAL-BTC" target="_blank" class="gradient-button inline-block">
+                            Trade SAL/BTC
+                        </a>
+                    </div>
                 </div>
-                <div class="card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <img src="images/exchanges/XeggeX-widget.png" alt="XeggeX" class="h-16 mx-auto mb-6">
-                    <h2 class="text-2xl font-bold mb-4">XeggeX</h2>
-                    <p class="text-gray-300 mb-6">Trading Pair: SAL/USDT</p>
-                    <a href="https://xeggex.com/market/SAL_USDT" target="_blank" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-white rounded-lg hover:opacity-90 transition-opacity">Trade on XeggeX</a>
+
+                <!-- XeggeX -->
+                <div class="exchange-card rounded-lg p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                        <img src="images/exchanges/XeggeX-widget.png" alt="XeggeX" class="w-full h-full object-contain">
+                    </div>
+                    <h2 class="text-2xl font-semibold mb-4 text-white text-center">XeggeX</h2>
+                    <div class="bg-[#40E0D0]/5 rounded-lg p-4 mb-6 border border-[#40E0D0]/10">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400">Trading Pair</span>
+                            <span class="text-[#40E0D0] font-semibold">SAL/USDT</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://xeggex.com/market/SAL_USDT" target="_blank" class="gradient-button inline-block">
+                            Trade Now
+                        </a>
+                    </div>
                 </div>
-                <div class="card rounded-xl p-8 text-center" data-aos="fade-up">
-                    <img src="images/exchanges/nonkyc.png" alt="nonkyc" class="h-16 mx-auto mb-6">
-                    <h2 class="text-2xl font-bold mb-4">nonkyc</h2>
-                    <p class="text-gray-300 mb-6">Trading Pair: SAL/USDT</p>
-                    <a href="https://nonkyc.io/market/SAL_USDT" target="_blank" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-white rounded-lg hover:opacity-90 transition-opacity">Trade on nonkyc</a>
+
+                <!-- nonkyc -->
+                <div class="exchange-card rounded-lg p-8" data-aos="fade-up">
+                    <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                        <img src="images/exchanges/nonkyc.png" alt="nonkyc" class="w-full h-full object-contain">
+                    </div>
+                    <h2 class="text-2xl font-semibold mb-4 text-white text-center">nonkyc</h2>
+                    <div class="bg-[#40E0D0]/5 rounded-lg p-4 mb-6 border border-[#40E0D0]/10">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400">Trading Pair</span>
+                            <span class="text-[#40E0D0] font-semibold">SAL/USDT</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://nonkyc.io/market/SAL_USDT" target="_blank" class="gradient-button inline-block">
+                            Trade Now
+                        </a>
+                    </div>
                 </div>
-                <div class="card rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <img src="images/exchanges/CoinEx.png" alt="CoinEx" class="h-16 mx-auto mb-6">
-                    <h2 class="text-2xl font-bold mb-4">CoinEx</h2>
-                    <p class="text-gray-300 mb-6">Trading Pair: SAL/USDT</p>
-                    <a href="https://www.coinex.com/exchange/sal-usdt" target="_blank" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-white rounded-lg hover:opacity-90 transition-opacity">Trade on CoinEx</a>
+
+                <!-- CoinEx -->
+                <div class="exchange-card rounded-lg p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                        <img src="images/exchanges/CoinEx.png" alt="CoinEx" class="w-full h-full object-contain">
+                    </div>
+                    <h2 class="text-2xl font-semibold mb-4 text-white text-center">CoinEx</h2>
+                    <div class="bg-[#40E0D0]/5 rounded-lg p-4 mb-6 border border-[#40E0D0]/10">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400">Trading Pair</span>
+                            <span class="text-[#40E0D0] font-semibold">SAL/USDT</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://www.coinex.com/exchange/sal-usdt" target="_blank" class="gradient-button inline-block">
+                            Trade Now
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -115,16 +233,13 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
     <script src="js/particles.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js?v=1"></script>
     <script>
         AOS.init({
             duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            mirror: false
+            once: true
         });
     </script>
 </body>
