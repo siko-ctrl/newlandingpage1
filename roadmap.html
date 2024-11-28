@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>Roadmap - Salvium Protocol</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
         <!-- Favicons -->
         <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -19,11 +19,12 @@
         <!-- Fonts and Styles -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link href="https://unpkg.com/tailwindcss@^2.2.19/dist/tailwind.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <link rel="stylesheet" href="css/design-system.css">
+        
         <style>
             :root {
                 --color-primary: #40E0D0;
@@ -106,53 +107,63 @@
             }
 
             /* Card Styles */
-            .roadmap-card {
-                background: linear-gradient(to bottom, rgba(40, 40, 40, 0.95), rgba(30, 30, 30, 0.98));
+            .card {
+                background: rgba(11, 39, 44, 0.5);
+                backdrop-filter: blur(10px);
                 border: 1px solid rgba(64, 224, 208, 0.1);
-                transition: all 0.3s ease;
                 padding: 1.5rem;
                 border-radius: 0.75rem;
+                transition: all 0.3s ease;
+            }
+
+            .card:hover {
+                border-color: rgba(64, 224, 208, 0.3);
+                transform: translateY(-2px);
             }
 
             @media (min-width: 768px) {
-                .roadmap-card {
+                .card {
                     padding: 2rem;
                 }
             }
 
-            .roadmap-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 6px 12px rgba(64, 224, 208, 0.1);
-            }
-
-            .roadmap-card h3 {
+            .card h3 {
                 color: #40E0D0;
                 font-size: 1.5rem;
                 margin-bottom: 1rem;
                 font-weight: 600;
             }
 
-            .roadmap-card ul li {
-                margin-bottom: 0.75rem;
-                color: #e5e5e5;
-                position: relative;
-                padding-left: 1.5rem;
+            .card ul {
+                list-style: none;
+                padding: 0;
             }
 
-            .roadmap-card ul li:before {
+            .card ul li {
+                margin-bottom: 0.75rem;
+                color: #e5e5e5;
+                display: flex;
+                align-items: center;
+            }
+
+            .card ul li::before {
                 content: "•";
                 color: #40E0D0;
-                position: absolute;
-                left: 0;
+                margin-right: 0.75rem;
             }
 
             .vision-section {
                 margin-top: 4rem;
                 padding: 2rem;
-                background: rgba(255, 255, 255, 0.05);
+                background: rgba(11, 39, 44, 0.5);
                 backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 0.5rem;
+                border: 1px solid rgba(64, 224, 208, 0.1);
+                border-radius: 0.75rem;
+                transition: all 0.3s ease;
+            }
+
+            .vision-section:hover {
+                border-color: rgba(64, 224, 208, 0.3);
             }
 
             .vision-section h2 {
@@ -170,15 +181,6 @@
             .vision-section ul li {
                 color: #e5e5e5;
                 margin-bottom: 0.75rem;
-                position: relative;
-                padding-left: 1.5rem;
-            }
-
-            .vision-section ul li:before {
-                content: "•";
-                color: #40E0D0;
-                position: absolute;
-                left: 0;
             }
 
             .gradient-text {
@@ -190,7 +192,7 @@
             }
 
             @media (max-width: 768px) {
-                .roadmap-card {
+                .card {
                     margin-bottom: 1.5rem;
                 }
             }
@@ -206,87 +208,70 @@
 
         <div class="main-wrapper">
             <main class="relative z-10">
-                <div class="container mx-auto px-4 py-20">
+                <div class="container section">
                     <div class="text-center mb-12" data-aos="fade-up">
-                        <h1 class="text-4xl md:text-5xl font-bold mb-4">Salvium <span class="gradient-text">Roadmap</span></h1>
-                        <p class="text-xl text-gray-300">Our journey to revolutionize private finance</p>
+                        <h1>Salvium <span class="gradient-text">Roadmap</span></h1>
+                        <p class="text-xl text-secondary">Our journey to revolutionize private finance</p>
                     </div>
 
-                    <div class="max-w-4xl mx-auto space-y-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <!-- Q1 2024 -->
-                        <div class="bg-[rgba(255,255,255,0.05)] backdrop-blur-lg border border-[rgba(255,255,255,0.1)] rounded-lg p-8" data-aos="fade-up">
-                            <h2 class="text-2xl font-bold text-[#40E0D0] mb-4">Q1 2024 - Foundation</h2>
-                            <div class="space-y-4 text-gray-300">
-                                <p>During the first quarter of 2024, we will focus on establishing the core infrastructure of Salvium Protocol. This includes:</p>
-                                <ul class="list-disc pl-6 space-y-2">
-                                    <li>Launch of Salvium Protocol testnet, providing a secure environment for testing and validation</li>
-                                    <li>Implementation of core privacy features, ensuring robust protection of user transactions</li>
-                                    <li>Initiation of community building initiatives to foster a strong and engaged user base</li>
-                                    <li>Comprehensive security audits and testing to ensure platform reliability</li>
-                                </ul>
-                            </div>
+                        <div class="card" data-aos="fade-up">
+                            <h3 class="gradient-text">Q1 2024 - Foundation</h3>
+                            <ul class="list-styled">
+                                <li>Launch of Salvium Protocol testnet</li>
+                                <li>Core privacy features implementation</li>
+                                <li>Community building initiatives</li>
+                                <li>Security audits and testing</li>
+                            </ul>
                         </div>
 
                         <!-- Q2 2024 -->
-                        <div class="bg-[rgba(255,255,255,0.05)] backdrop-blur-lg border border-[rgba(255,255,255,0.1)] rounded-lg p-8" data-aos="fade-up">
-                            <h2 class="text-2xl font-bold text-[#40E0D0] mb-4">Q2 2024 - Integration</h2>
-                            <div class="space-y-4 text-gray-300">
-                                <p>The second quarter will focus on platform launch and key integrations:</p>
-                                <ul class="list-disc pl-6 space-y-2">
-                                    <li>Official mainnet launch, bringing Salvium Protocol to the public</li>
-                                    <li>Deployment of our innovative staking mechanism for network security</li>
-                                    <li>Strategic exchange partnerships to ensure widespread accessibility</li>
-                                    <li>Integration with major cryptocurrency wallets for seamless user experience</li>
-                                </ul>
-                            </div>
+                        <div class="card" data-aos="fade-up" data-aos-delay="100">
+                            <h3 class="gradient-text">Q2 2024 - Integration</h3>
+                            <ul class="list-styled">
+                                <li>Mainnet launch</li>
+                                <li>Staking mechanism deployment</li>
+                                <li>Exchange partnerships</li>
+                                <li>Wallet integrations</li>
+                            </ul>
                         </div>
 
                         <!-- Q3 2024 -->
-                        <div class="bg-[rgba(255,255,255,0.05)] backdrop-blur-lg border border-[rgba(255,255,255,0.1)] rounded-lg p-8" data-aos="fade-up">
-                            <h2 class="text-2xl font-bold text-[#40E0D0] mb-4">Q3 2024 - Expansion</h2>
-                            <div class="space-y-4 text-gray-300">
-                                <p>Q3 will be dedicated to expanding our ecosystem and enhancing functionality:</p>
-                                <ul class="list-disc pl-6 space-y-2">
-                                    <li>Integration with leading DeFi protocols to expand financial capabilities</li>
-                                    <li>Development of cross-chain bridges for improved interoperability</li>
-                                    <li>Implementation of enhanced privacy features and optimizations</li>
-                                    <li>Release of comprehensive developer tools and SDK for ecosystem growth</li>
-                                </ul>
-                            </div>
+                        <div class="card" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="gradient-text">Q3 2024 - Expansion</h3>
+                            <ul class="list-styled">
+                                <li>DeFi protocol integrations</li>
+                                <li>Cross-chain bridge development</li>
+                                <li>Enhanced privacy features</li>
+                                <li>Developer tools and SDK release</li>
+                            </ul>
                         </div>
 
                         <!-- Q4 2024 -->
-                        <div class="bg-[rgba(255,255,255,0.05)] backdrop-blur-lg border border-[rgba(255,255,255,0.1)] rounded-lg p-8" data-aos="fade-up">
-                            <h2 class="text-2xl font-bold text-[#40E0D0] mb-4">Q4 2024 - Innovation</h2>
-                            <div class="space-y-4 text-gray-300">
-                                <p>The final quarter of 2024 will focus on advanced features and community empowerment:</p>
-                                <ul class="list-disc pl-6 space-y-2">
-                                    <li>Introduction of advanced DeFi capabilities and innovative financial instruments</li>
-                                    <li>Launch of decentralized governance system for community-driven development</li>
-                                    <li>Establishment of ecosystem grants program to support developers</li>
-                                    <li>Enhanced developer support and documentation resources</li>
-                                </ul>
-                            </div>
+                        <div class="card" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="gradient-text">Q4 2024 - Innovation</h3>
+                            <ul class="list-styled">
+                                <li>Advanced DeFi capabilities</li>
+                                <li>Governance implementation</li>
+                                <li>Ecosystem grants program</li>
+                                <li>Enhanced developer support</li>
+                            </ul>
                         </div>
+                    </div>
 
-                        <!-- Long-term Vision -->
-                        <div class="bg-[rgba(255,255,255,0.05)] backdrop-blur-lg border border-[rgba(255,255,255,0.1)] rounded-lg p-8" data-aos="fade-up">
-                            <h2 class="text-2xl font-bold text-[#40E0D0] mb-4">Long-term Vision</h2>
-                            <div class="space-y-6 text-gray-300">
-                                <p>Beyond 2024, Salvium Protocol aims to become the cornerstone of private finance in the Web3 ecosystem. Our commitment to innovation, security, and user privacy will drive continuous improvements and expansions of our protocol's capabilities.</p>
-                                
-                                <div>
-                                    <h3 class="text-xl font-semibold mb-4 text-[#40E0D0]">Future Initiatives</h3>
-                                    <ul class="list-disc pl-6 space-y-2">
-                                        <li>Development of advanced privacy-preserving smart contracts</li>
-                                        <li>Expansion of cross-chain interoperability features</li>
-                                        <li>Implementation of enhanced scalability solutions</li>
-                                        <li>Creation of innovative DeFi primitives</li>
-                                        <li>Integration with broader blockchain ecosystem</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="card mt-16" data-aos="fade-up">
+                        <h2 class="gradient-text">Long-term Vision</h2>
+                        <p class="text-secondary mb-6">Beyond 2024, Salvium Protocol aims to become the cornerstone of private finance in the Web3 ecosystem. Our commitment to innovation, security, and user privacy will drive continuous improvements and expansions of our protocol's capabilities.</p>
+                        
+                        <h3 class="gradient-text text-2xl mb-4">Future Initiatives</h3>
+                        <ul class="list-styled">
+                            <li>Advanced privacy-preserving smart contracts</li>
+                            <li>Expanded cross-chain interoperability</li>
+                            <li>Enhanced scalability solutions</li>
+                            <li>Innovative DeFi primitives</li>
+                            <li>Broader ecosystem integration</li>
+                        </ul>
                     </div>
                 </div>
             </main>
