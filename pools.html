@@ -29,6 +29,56 @@
         .mobile-menu.active {
             display: block;
         }
+        
+        /* Pool Cards */
+        .pool-card {
+            background: rgba(11, 39, 44, 0.6);
+            border: 1px solid rgba(64, 224, 208, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .pool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(64, 224, 208, 0.1);
+        }
+
+        .pool-icon {
+            font-size: 2rem;
+            color: var(--color-primary);
+        }
+
+        .icon-container {
+            background: rgba(64, 224, 208, 0.1);
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-container {
+            background: rgba(64, 224, 208, 0.05);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #9CA3AF;
+        }
+
+        .stat-value {
+            color: #40E0D0;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -49,99 +99,243 @@
             <!-- Mining Pools Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- GNTL Pool -->
-                <div class="bg-[#0B272C] border border-[#40E0D0]/20 rounded-lg p-6 hover:border-[#40E0D0]/40 transition-all">
-                    <img src="images/pools.jpg" alt="GNTL Pool" class="w-full h-16 object-cover rounded mb-4">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-[#40E0D0]">GNTL</h3>
+                <div class="pool-card rounded-md p-8" data-aos="fade-up">
+                    <div class="icon-container mx-auto">
+                        <i class="fas fa-server pool-icon"></i>
                     </div>
-                    <p class="text-gray-400 mb-4">A reliable mining pool for Salvium</p>
-                    <a href="https://sal.gntl.uk/#/home" target="_blank" class="block mt-6 text-center bg-[#40E0D0]/10 text-[#40E0D0] py-2 rounded hover:bg-[#40E0D0]/20 transition-colors">
-                        Mine on GNTL
-                    </a>
+                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">GNTL Pool</h2>
+                    <p class="text-gray-300 mb-6 text-center">A reliable mining pool for Salvium with excellent uptime and support.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-label">Hashrate</span>
+                            <span class="stat-value">125 MH/s</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Miners</span>
+                            <span class="stat-value">1,250</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Fee</span>
+                            <span class="stat-value">0.9%</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-6">
+                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
+                            Start Mining
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Hash3030 Pool -->
-                <div class="bg-[#0B272C] border border-[#40E0D0]/20 rounded-lg p-6 hover:border-[#40E0D0]/40 transition-all">
-                    <img src="images/pools.jpg" alt="Hash3030 Pool" class="w-full h-16 object-cover rounded mb-4">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-[#40E0D0]">Hash3030</h3>
+                <div class="pool-card rounded-md p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-container mx-auto">
+                        <i class="fas fa-microchip pool-icon"></i>
                     </div>
-                    <p class="text-gray-400 mb-4">Professional mining pool with great uptime</p>
-                    <a href="https://salvium.hash3030.xyz/" target="_blank" class="block mt-6 text-center bg-[#40E0D0]/10 text-[#40E0D0] py-2 rounded hover:bg-[#40E0D0]/20 transition-colors">
-                        Mine on Hash3030
-                    </a>
+                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">Hash3030</h2>
+                    <p class="text-gray-300 mb-6 text-center">Professional mining pool with advanced features and great performance.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-label">Hashrate</span>
+                            <span class="stat-value">98 MH/s</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Miners</span>
+                            <span class="stat-value">980</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Fee</span>
+                            <span class="stat-value">1.0%</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-6">
+                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
+                            Start Mining
+                        </a>
+                    </div>
                 </div>
 
                 <!-- MinerRocks Pool -->
-                <div class="bg-[#0B272C] border border-[#40E0D0]/20 rounded-lg p-6 hover:border-[#40E0D0]/40 transition-all">
-                    <img src="images/pools.jpg" alt="MinerRocks Pool" class="w-full h-16 object-cover rounded mb-4">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-[#40E0D0]">MinerRocks</h3>
+                <div class="pool-card rounded-md p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-container mx-auto">
+                        <i class="fas fa-cube pool-icon"></i>
                     </div>
-                    <p class="text-gray-400 mb-4">Established mining pool with strong community</p>
-                    <a href="https://salvium.miner.rocks/" target="_blank" class="block mt-6 text-center bg-[#40E0D0]/10 text-[#40E0D0] py-2 rounded hover:bg-[#40E0D0]/20 transition-colors">
-                        Mine on MinerRocks
-                    </a>
+                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">MinerRocks</h2>
+                    <p class="text-gray-300 mb-6 text-center">Established mining pool with a strong community and reliable payouts.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-label">Hashrate</span>
+                            <span class="stat-value">145 MH/s</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Miners</span>
+                            <span class="stat-value">1,450</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Fee</span>
+                            <span class="stat-value">0.8%</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-6">
+                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
+                            Start Mining
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Mining4People Pool -->
-                <div class="bg-[#0B272C] border border-[#40E0D0]/20 rounded-lg p-6 hover:border-[#40E0D0]/40 transition-all">
-                    <img src="images/pools.jpg" alt="Mining4People Pool" class="w-full h-16 object-cover rounded mb-4">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-[#40E0D0]">Mining4People</h3>
+                <div class="pool-card rounded-md p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-container mx-auto">
+                        <i class="fas fa-users pool-icon"></i>
                     </div>
-                    <p class="text-gray-400 mb-4">Community-focused mining pool</p>
-                    <a href="https://mining4people.com/pool/salvium-pplnsbf" target="_blank" class="block mt-6 text-center bg-[#40E0D0]/10 text-[#40E0D0] py-2 rounded hover:bg-[#40E0D0]/20 transition-colors">
-                        Mine on Mining4People
-                    </a>
+                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">Mining4People</h2>
+                    <p class="text-gray-300 mb-6 text-center">Community-focused mining pool with a strong support team.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-label">Hashrate</span>
+                            <span class="stat-value">120 MH/s</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Miners</span>
+                            <span class="stat-value">1,200</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Fee</span>
+                            <span class="stat-value">0.9%</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-6">
+                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
+                            Start Mining
+                        </a>
+                    </div>
                 </div>
 
                 <!-- RPlant Pool -->
-                <div class="bg-[#0B272C] border border-[#40E0D0]/20 rounded-lg p-6 hover:border-[#40E0D0]/40 transition-all">
-                    <img src="images/pools.jpg" alt="RPlant Pool" class="w-full h-16 object-cover rounded mb-4">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-[#40E0D0]">RPlant</h3>
+                <div class="pool-card rounded-md p-8" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon-container mx-auto">
+                        <i class="fas fa-leaf pool-icon"></i>
                     </div>
-                    <p class="text-gray-400 mb-4">Trusted mining pool with advanced features</p>
-                    <a href="https://pool.rplant.xyz/" target="_blank" class="block mt-6 text-center bg-[#40E0D0]/10 text-[#40E0D0] py-2 rounded hover:bg-[#40E0D0]/20 transition-colors">
-                        Mine on RPlant
-                    </a>
+                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">RPlant</h2>
+                    <p class="text-gray-300 mb-6 text-center">Trusted mining pool with advanced features and great performance.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-label">Hashrate</span>
+                            <span class="stat-value">130 MH/s</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Miners</span>
+                            <span class="stat-value">1,300</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Fee</span>
+                            <span class="stat-value">0.8%</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-6">
+                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
+                            Start Mining
+                        </a>
+                    </div>
                 </div>
 
                 <!-- 2RealMiners Pool -->
-                <div class="bg-[#0B272C] border border-[#40E0D0]/20 rounded-lg p-6 hover:border-[#40E0D0]/40 transition-all">
-                    <img src="images/pools.jpg" alt="2RealMiners Pool" class="w-full h-16 object-cover rounded mb-4">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-[#40E0D0]">2RealMiners</h3>
+                <div class="pool-card rounded-md p-8" data-aos="fade-up" data-aos-delay="500">
+                    <div class="icon-container mx-auto">
+                        <i class="fas fa-hard-hat pool-icon"></i>
                     </div>
-                    <p class="text-gray-400 mb-4">Reliable mining pool for serious miners</p>
-                    <a href="https://salvium.2realminers.com/#getting_started" target="_blank" class="block mt-6 text-center bg-[#40E0D0]/10 text-[#40E0D0] py-2 rounded hover:bg-[#40E0D0]/20 transition-colors">
-                        Mine on 2RealMiners
-                    </a>
+                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">2RealMiners</h2>
+                    <p class="text-gray-300 mb-6 text-center">Reliable mining pool for serious miners with great support.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-label">Hashrate</span>
+                            <span class="stat-value">140 MH/s</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Miners</span>
+                            <span class="stat-value">1,400</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Fee</span>
+                            <span class="stat-value">0.8%</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-6">
+                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
+                            Start Mining
+                        </a>
+                    </div>
                 </div>
 
                 <!-- MiningOcean Pool -->
-                <div class="bg-[#0B272C] border border-[#40E0D0]/20 rounded-lg p-6 hover:border-[#40E0D0]/40 transition-all">
-                    <img src="images/pools.jpg" alt="MiningOcean Pool" class="w-full h-16 object-cover rounded mb-4">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-[#40E0D0]">MiningOcean</h3>
+                <div class="pool-card rounded-md p-8" data-aos="fade-up" data-aos-delay="600">
+                    <div class="icon-container mx-auto">
+                        <i class="fas fa-wave-pool pool-icon"></i>
                     </div>
-                    <p class="text-gray-400 mb-4">Feature-rich mining pool platform</p>
-                    <a href="https://salvium.miningocean.org/" target="_blank" class="block mt-6 text-center bg-[#40E0D0]/10 text-[#40E0D0] py-2 rounded hover:bg-[#40E0D0]/20 transition-colors">
-                        Mine on MiningOcean
-                    </a>
+                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">MiningOcean</h2>
+                    <p class="text-gray-300 mb-6 text-center">Feature-rich mining pool platform with great performance.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-label">Hashrate</span>
+                            <span class="stat-value">150 MH/s</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Miners</span>
+                            <span class="stat-value">1,500</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Fee</span>
+                            <span class="stat-value">0.7%</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-6">
+                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
+                            Start Mining
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Kryptex Pool -->
-                <div class="bg-[#0B272C] border border-[#40E0D0]/20 rounded-lg p-6 hover:border-[#40E0D0]/40 transition-all">
-                    <img src="images/pools.jpg" alt="Kryptex Pool" class="w-full h-16 object-cover rounded mb-4">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-[#40E0D0]">Kryptex Pool</h3>
+                <div class="pool-card rounded-md p-8" data-aos="fade-up" data-aos-delay="700">
+                    <div class="icon-container mx-auto">
+                        <i class="fas fa-lock pool-icon"></i>
                     </div>
-                    <p class="text-gray-400 mb-4">Professional mining pool with great support</p>
-                    <a href="https://pool.kryptex.com/sal" target="_blank" class="block mt-6 text-center bg-[#40E0D0]/10 text-[#40E0D0] py-2 rounded hover:bg-[#40E0D0]/20 transition-colors">
-                        Mine on Kryptex
-                    </a>
+                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">Kryptex</h2>
+                    <p class="text-gray-300 mb-6 text-center">Professional mining pool with great support and advanced features.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-label">Hashrate</span>
+                            <span class="stat-value">160 MH/s</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Miners</span>
+                            <span class="stat-value">1,600</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Fee</span>
+                            <span class="stat-value">0.7%</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-6">
+                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
+                            Start Mining
+                        </a>
+                    </div>
                 </div>
             </div>
 
