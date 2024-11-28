@@ -126,37 +126,26 @@
                 color: transparent;
             }
 
+            /* Card Styles */
             .paper-card {
-                background: rgba(26, 26, 26, 0.5);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
+                background: linear-gradient(to bottom, rgba(40, 40, 40, 0.95), rgba(30, 30, 30, 0.98));
                 border: 1px solid rgba(64, 224, 208, 0.1);
-                border-radius: 16px;
-                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                transition: all 0.3s ease;
+                padding: 2rem;
+                border-radius: 0.75rem;
                 position: relative;
                 overflow: hidden;
             }
 
-            .paper-card::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(64, 224, 208, 0.2), transparent);
-                transform: scaleX(0);
-                transition: transform 0.4s;
-            }
-
             .paper-card:hover {
                 transform: translateY(-5px);
-                border-color: rgba(64, 224, 208, 0.3);
-                box-shadow: 0 8px 32px rgba(64, 224, 208, 0.15);
+                box-shadow: 0 6px 12px rgba(64, 224, 208, 0.1);
             }
 
-            .paper-card:hover::before {
-                transform: scaleX(1);
+            /* Remove any custom effects */
+            .paper-card::before,
+            .paper-card::after {
+                display: none;
             }
 
             .paper-link {

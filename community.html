@@ -78,69 +78,15 @@
         }
 
         /* Card Styles */
-        .community-card {
-            background: linear-gradient(145deg, rgba(11, 39, 44, 0.4), rgba(11, 39, 44, 0.6));
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+        .ecosystem-card {
+            background: linear-gradient(to bottom, rgba(40, 40, 40, 0.95), rgba(30, 30, 30, 0.98));
             border: 1px solid rgba(64, 224, 208, 0.1);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .community-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(145deg, rgba(64, 224, 208, 0.1), rgba(10, 235, 133, 0.1));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .community-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border-color: rgba(64, 224, 208, 0.3);
-        }
-
-        .community-card:hover::before {
-            opacity: 1;
-        }
-
-        .icon-container {
-            background: linear-gradient(145deg, rgba(64, 224, 208, 0.15), rgba(10, 235, 133, 0.15));
-            border: 1px solid rgba(64, 224, 208, 0.2);
-            border-radius: 50%;
-            width: 4rem;
-            height: 4rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
             transition: all 0.3s ease;
         }
 
-        .community-card:hover .icon-container {
-            transform: scale(1.1);
-            background: linear-gradient(145deg, rgba(64, 224, 208, 0.2), rgba(10, 235, 133, 0.2));
-            border-color: rgba(64, 224, 208, 0.4);
-        }
-
-        .community-icon {
-            font-size: 2rem;
-            background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dark));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            transition: all 0.3s ease;
-        }
-
-        .community-card:hover .community-icon {
-            transform: scale(1.1);
+        .ecosystem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(64, 224, 208, 0.1);
         }
 
         /* Button Styles */
@@ -194,86 +140,116 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- X (Twitter) -->
-                    <div class="community-card rounded-md p-8" data-aos="fade-up">
-                        <div class="icon-container mx-auto">
-                            <i class="fa-brands fa-x-twitter community-icon"></i>
+                    <div class="ecosystem-card rounded-md">
+                        <div class="w-full h-48 overflow-hidden rounded-t-md">
+                            <img src="./images/placeholder-image.jpg" alt="X (Twitter) Community" class="w-full h-full object-cover">
                         </div>
-                        <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0]">X (Twitter)</h2>
-                        <p class="text-gray-300 mb-6">Follow us for the latest updates, announcements, and community highlights.</p>
-                        <div class="text-center">
-                            <a href="https://twitter.com/SalviumProtocol" target="_blank" class="gradient-button inline-block px-6 py-3 text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
-                                <span>Follow on X</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Telegram -->
-                    <div class="community-card rounded-md p-8" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon-container mx-auto">
-                            <i class="fab fa-telegram community-icon"></i>
-                        </div>
-                        <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0]">Telegram</h2>
-                        <p class="text-gray-300 mb-6">Join our Telegram group for real-time discussions and support.</p>
-                        <div class="text-center">
-                            <a href="https://t.me/salviumprotocol" target="_blank" class="gradient-button inline-block px-6 py-3 text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
-                                <span>Join Telegram</span>
-                            </a>
+                        <div class="p-4 sm:p-6">
+                            <h3 class="text-lg font-semibold mb-2 sm:mb-3 text-[#40E0D0]">X (Twitter)</h3>
+                            <p class="text-gray-300 mb-3 sm:mb-4 text-sm" style="font-family: Arial, sans-serif;">
+                                Follow us on X for the latest updates, announcements, and community discussions.
+                            </p>
+                            <div class="text-right">
+                                <a href="#" style="color: #40E0D0;" class="hover:text-[#40E0D0]/80 text-sm inline-flex items-center transition-colors">
+                                    Join Community
+                                    <i class="fa-solid fa-chevron-right ml-1"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Discord -->
-                    <div class="community-card rounded-md p-8" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon-container mx-auto">
-                            <i class="fab fa-discord community-icon"></i>
+                    <div class="ecosystem-card rounded-md">
+                        <div class="w-full h-48 overflow-hidden rounded-t-md">
+                            <img src="./images/placeholder-image.jpg" alt="Discord Community" class="w-full h-full object-cover">
                         </div>
-                        <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0]">Discord</h2>
-                        <p class="text-gray-300 mb-6">Connect with our community on Discord for technical discussions.</p>
-                        <div class="text-center">
-                            <a href="https://discord.gg/salvium" target="_blank" class="gradient-button inline-block px-6 py-3 text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
-                                <span>Join Discord</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Medium -->
-                    <div class="community-card rounded-md p-8" data-aos="fade-up">
-                        <div class="icon-container mx-auto">
-                            <i class="fab fa-medium community-icon"></i>
-                        </div>
-                        <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0]">Medium</h2>
-                        <p class="text-gray-300 mb-6">Read our in-depth articles and technical blog posts.</p>
-                        <div class="text-center">
-                            <a href="#" target="_blank" class="gradient-button inline-block px-6 py-3 text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
-                                <span>Follow on Medium</span>
-                            </a>
+                        <div class="p-4 sm:p-6">
+                            <h3 class="text-lg font-semibold mb-2 sm:mb-3 text-[#40E0D0]">Discord</h3>
+                            <p class="text-gray-300 mb-3 sm:mb-4 text-sm" style="font-family: Arial, sans-serif;">
+                                Join our Discord server to connect with fellow community members and get direct support.
+                            </p>
+                            <div class="text-right">
+                                <a href="#" style="color: #40E0D0;" class="hover:text-[#40E0D0]/80 text-sm inline-flex items-center transition-colors">
+                                    Join Community
+                                    <i class="fa-solid fa-chevron-right ml-1"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- GitHub -->
-                    <div class="community-card rounded-md p-8" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon-container mx-auto">
-                            <i class="fab fa-github community-icon"></i>
+                    <!-- Telegram -->
+                    <div class="ecosystem-card rounded-md">
+                        <div class="w-full h-48 overflow-hidden rounded-t-md">
+                            <img src="./images/placeholder-image.jpg" alt="Telegram Community" class="w-full h-full object-cover">
                         </div>
-                        <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0]">GitHub</h2>
-                        <p class="text-gray-300 mb-6">Explore our open-source code and contribute to development.</p>
-                        <div class="text-center">
-                            <a href="https://github.com/salvium" target="_blank" class="gradient-button inline-block px-6 py-3 text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
-                                <span>View on GitHub</span>
-                            </a>
+                        <div class="p-4 sm:p-6">
+                            <h3 class="text-lg font-semibold mb-2 sm:mb-3 text-[#40E0D0]">Telegram</h3>
+                            <p class="text-gray-300 mb-3 sm:mb-4 text-sm" style="font-family: Arial, sans-serif;">
+                                Stay connected with our global community through our official Telegram channel.
+                            </p>
+                            <div class="text-right">
+                                <a href="#" style="color: #40E0D0;" class="hover:text-[#40E0D0]/80 text-sm inline-flex items-center transition-colors">
+                                    Join Community
+                                    <i class="fa-solid fa-chevron-right ml-1"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Reddit -->
-                    <div class="community-card rounded-md p-8" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon-container mx-auto">
-                            <i class="fab fa-reddit community-icon"></i>
+                    <div class="ecosystem-card rounded-md">
+                        <div class="w-full h-48 overflow-hidden rounded-t-md">
+                            <img src="./images/placeholder-image.jpg" alt="Reddit Community" class="w-full h-full object-cover">
                         </div>
-                        <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0]">Reddit</h2>
-                        <p class="text-gray-300 mb-6">Join discussions and share your thoughts on our subreddit.</p>
-                        <div class="text-center">
-                            <a href="#" target="_blank" class="gradient-button inline-block px-6 py-3 text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
-                                <span>Join Subreddit</span>
-                            </a>
+                        <div class="p-4 sm:p-6">
+                            <h3 class="text-lg font-semibold mb-2 sm:mb-3 text-[#40E0D0]">Reddit</h3>
+                            <p class="text-gray-300 mb-3 sm:mb-4 text-sm" style="font-family: Arial, sans-serif;">
+                                Join our subreddit for in-depth discussions and community-driven content.
+                            </p>
+                            <div class="text-right">
+                                <a href="#" style="color: #40E0D0;" class="hover:text-[#40E0D0]/80 text-sm inline-flex items-center transition-colors">
+                                    Join Community
+                                    <i class="fa-solid fa-chevron-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medium -->
+                    <div class="ecosystem-card rounded-md">
+                        <div class="w-full h-48 overflow-hidden rounded-t-md">
+                            <img src="./images/placeholder-image.jpg" alt="Medium Community" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 sm:p-6">
+                            <h3 class="text-lg font-semibold mb-2 sm:mb-3 text-[#40E0D0]">Medium</h3>
+                            <p class="text-gray-300 mb-3 sm:mb-4 text-sm" style="font-family: Arial, sans-serif;">
+                                Read our in-depth articles and technical blog posts.
+                            </p>
+                            <div class="text-right">
+                                <a href="#" style="color: #40E0D0;" class="hover:text-[#40E0D0]/80 text-sm inline-flex items-center transition-colors">
+                                    Join Community
+                                    <i class="fa-solid fa-chevron-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="ecosystem-card rounded-md">
+                        <div class="w-full h-48 overflow-hidden rounded-t-md">
+                            <img src="./images/placeholder-image.jpg" alt="GitHub Community" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 sm:p-6">
+                            <h3 class="text-lg font-semibold mb-2 sm:mb-3 text-[#40E0D0]">GitHub</h3>
+                            <p class="text-gray-300 mb-3 sm:mb-4 text-sm" style="font-family: Arial, sans-serif;">
+                                Explore our open-source code and contribute to development.
+                            </p>
+                            <div class="text-right">
+                                <a href="#" style="color: #40E0D0;" class="hover:text-[#40E0D0]/80 text-sm inline-flex items-center transition-colors">
+                                    Join Community
+                                    <i class="fa-solid fa-chevron-right ml-1"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
