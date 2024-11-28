@@ -89,65 +89,65 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden" id="mobile-menu" style="background: rgba(30, 30, 30, 0.98);">
-            <div class="px-4 pt-2 pb-3 space-y-1 font-body">
+        <div class="md:hidden hidden fixed w-full top-16 left-0 right-0" style="background: rgba(30, 30, 30, 0.98); backdrop-filter: blur(8px);" id="mobile-menu">
+            <div class="px-4 py-3 space-y-3 max-h-[calc(100vh-4rem)] overflow-y-auto">
                 <!-- Get Started Section -->
                 <div class="mobile-dropdown">
-                    <button class="w-full text-left text-white hover:text-[#40E0D0] py-2 mobile-dropdown-button">
-                        Get Started
-                        <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button class="w-full flex justify-between items-center text-white py-2 mobile-dropdown-button">
+                        <span>Get Started</span>
+                        <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div class="mobile-dropdown-menu hidden pl-4">
-                        <a href="exchanges.html" class="block py-2 text-white hover:text-[#40E0D0]">Exchanges</a>
-                        <a href="about.html" class="block py-2 text-white hover:text-[#40E0D0]">About</a>
-                        <a href="papers.html" class="block py-2 text-white hover:text-[#40E0D0]">Lite Paper</a>
-                        <a href="download.html" class="block py-2 text-white hover:text-[#40E0D0]">Downloads</a>
+                    <div class="mobile-dropdown-menu hidden pl-4 pb-2" style="background: rgba(30, 30, 30, 0.98);">
+                        <a href="exchanges.html" class="block py-2 text-white hover:text-[#40E0D0] transition-colors">Exchanges</a>
+                        <a href="about.html" class="block py-2 text-white hover:text-[#40E0D0] transition-colors">About</a>
+                        <a href="papers.html" class="block py-2 text-white hover:text-[#40E0D0] transition-colors">Lite Paper</a>
+                        <a href="download.html" class="block py-2 text-white hover:text-[#40E0D0] transition-colors">Downloads</a>
                     </div>
                 </div>
 
                 <!-- Knowledge Section -->
                 <div class="mobile-dropdown">
-                    <button class="w-full text-left text-white hover:text-[#40E0D0] py-2 mobile-dropdown-button">
-                        Knowledge
-                        <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button class="w-full flex justify-between items-center text-white py-2 mobile-dropdown-button">
+                        <span>Knowledge</span>
+                        <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div class="mobile-dropdown-menu hidden pl-4">
-                        <a href="faq.html" class="block py-2 text-white hover:text-[#40E0D0]">FAQ</a>
-                        <a href="knowledge-base.html" class="block py-2 text-white hover:text-[#40E0D0]">Knowledge Base</a>
-                        <a href="blogs.html" class="block py-2 text-white hover:text-[#40E0D0]">Blog</a>
+                    <div class="mobile-dropdown-menu hidden pl-4 pb-2" style="background: rgba(30, 30, 30, 0.98);">
+                        <a href="faq.html" class="block py-2 text-white hover:text-[#40E0D0] transition-colors">FAQ</a>
+                        <a href="knowledge-base.html" class="block py-2 text-white hover:text-[#40E0D0] transition-colors">Knowledge Base</a>
+                        <a href="blogs.html" class="block py-2 text-white hover:text-[#40E0D0] transition-colors">Blog</a>
                     </div>
                 </div>
 
                 <!-- Tools Section -->
                 <div class="mobile-dropdown">
-                    <button class="w-full text-left text-white hover:text-[#40E0D0] py-2 mobile-dropdown-button">
-                        Tools
-                        <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button class="w-full flex justify-between items-center text-white py-2 mobile-dropdown-button">
+                        <span>Tools</span>
+                        <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div class="mobile-dropdown-menu hidden pl-4">
-                        <a href="stats.html" class="block py-2 text-white hover:text-[#40E0D0]">Stats</a>
-                        <a href="explorer.html" class="block py-2 text-white hover:text-[#40E0D0]">Explorer</a>
+                    <div class="mobile-dropdown-menu hidden pl-4 pb-2" style="background: rgba(30, 30, 30, 0.98);">
+                        <a href="stats.html" class="block py-2 text-white hover:text-[#40E0D0] transition-colors">Stats</a>
+                        <a href="explorer.html" class="block py-2 text-white hover:text-[#40E0D0] transition-colors">Explorer</a>
                     </div>
                 </div>
 
                 <!-- Get Involved Section -->
                 <div class="mobile-dropdown">
-                    <button class="w-full text-left text-white hover:text-[#40E0D0] py-2 mobile-dropdown-button">
-                        Get Involved
-                        <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button class="w-full flex justify-between items-center text-white py-2 mobile-dropdown-button">
+                        <span>Get Involved</span>
+                        <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div class="mobile-dropdown-menu hidden pl-4">
-                        <a href="community.html" class="block py-2 text-white hover:text-[#40E0D0]">Community</a>
-                        <a href="pools.html" class="block py-2 text-white hover:text-[#40E0D0]">Pools</a>
-                        <a href="roadmap.html" class="block py-2 text-white hover:text-[#40E0D0]">Roadmap</a>
+                    <div class="mobile-dropdown-menu hidden pl-4 pb-2" style="background: rgba(30, 30, 30, 0.98);">
+                        <a href="community.html" class="block py-2 text-white hover:text-[#40E0D0] transition-colors">Community</a>
+                        <a href="pools.html" class="block py-2 text-white hover:text-[#40E0D0] transition-colors">Pools</a>
+                        <a href="roadmap.html" class="block py-2 text-white hover:text-[#40E0D0] transition-colors">Roadmap</a>
                     </div>
                 </div>
             </div>
@@ -190,11 +190,21 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenu.classList.toggle('hidden');
     });
 
-    // Mobile dropdown functionality
+    // Mobile dropdown functionality with arrow rotation
     mobileDropdownButtons.forEach(button => {
         button.addEventListener('click', () => {
             const menu = button.nextElementSibling;
+            const arrow = button.querySelector('svg');
+            
+            // Toggle the menu
             menu.classList.toggle('hidden');
+            
+            // Rotate the arrow
+            if (menu.classList.contains('hidden')) {
+                arrow.style.transform = 'rotate(0deg)';
+            } else {
+                arrow.style.transform = 'rotate(180deg)';
+            }
         });
     });
 });
