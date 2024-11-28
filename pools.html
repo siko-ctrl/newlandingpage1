@@ -3,383 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mining Pools - Salvium Protocol</title>
+    <title>Mining Pools - Salvium</title>
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#0B272C">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#0B272C">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Custom Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0B272C;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Josefin Sans', sans-serif;
-        }
-        .mobile-menu {
-            display: none;
-        }
-        .mobile-menu.active {
-            display: block;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
-        /* Pool Cards */
+        :root {
+            /* Primary Colors */
+            --color-primary: #40E0D0;
+            --color-primary-dark: #0AEB85;
+
+            /* Background Colors */
+            --color-bg-dark: #0B272C;
+            --color-bg-darker: #0B272C;
+            --color-bg-header: #0B272C;
+
+            /* Text Colors */
+            --color-text: #ffffff;
+            --color-text-light: #ffffff;
+            --color-text-lighter: #ffffff;
+
+            /* Accent Colors */
+            --color-accent: #40E0D0;
+            --color-accent-light: #40E0D0;
+
+            /* Border Colors */
+            --color-border: rgba(255, 255, 255, 0.15);
+            --color-border-light: rgba(255, 255, 255, 0.05);
+
+            /* Font */
+            --font-title: 'Josefin Sans', sans-serif;
+            --font-body: Arial, sans-serif;
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-title);
+            background-color: var(--color-bg-dark);
+            color: var(--color-text);
+            line-height: 1.6;
+            position: relative;
+        }
+
         .pool-card {
-            background: rgba(11, 39, 44, 0.6);
+            background: rgba(11, 39, 44, 0.8);
             border: 1px solid rgba(64, 224, 208, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             transition: all 0.3s ease;
         }
 
         .pool-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(64, 224, 208, 0.1);
-        }
-
-        .pool-icon {
-            font-size: 2rem;
-            color: var(--color-primary);
-        }
-
-        .icon-container {
-            background: rgba(64, 224, 208, 0.1);
-            border-radius: 50%;
-            width: 3rem;
-            height: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
+            border-color: rgba(64, 224, 208, 0.3);
+            box-shadow: 0 10px 20px rgba(64, 224, 208, 0.1);
         }
 
         .stats-container {
             background: rgba(64, 224, 208, 0.05);
-            border-radius: 0.5rem;
-            padding: 1rem;
-            margin-top: 1rem;
+            border: 1px solid rgba(64, 224, 208, 0.1);
         }
 
-        .stat-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: #9CA3AF;
-        }
-
-        .stat-value {
-            color: #40E0D0;
+        .gradient-button {
+            background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dark));
+            color: #000;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
             font-weight: 600;
+        }
+
+        .gradient-button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dark));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
-    <!-- Header -->
+<body class="bg-[#0B272C]">
+    <!-- Particles Container -->
+    <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- Header will be injected here -->
     <div id="header"></div>
 
     <!-- Main Content -->
-    <main class="flex-grow py-20">
-        <div class="container mx-auto px-4">
-            <!-- Hero Section -->
-            <div class="text-center mb-16">
-                <h1 class="text-4xl md:text-5xl font-bold text-[#40E0D0] mb-6">Mining Pools</h1>
-                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-                    Mine Salvium (SAL) on any of these trusted mining pools
-                </p>
+    <main class="relative z-10">
+        <div class="container mx-auto px-4 py-24">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Mining Pools</h1>
+                <p class="text-xl text-gray-300">Mine Salvium (SAL) on any of these trusted mining pools</p>
             </div>
 
             <!-- Mining Pools Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- GNTL Pool -->
-                <div class="pool-card rounded-md p-8" data-aos="fade-up">
-                    <div class="icon-container mx-auto">
-                        <i class="fas fa-server pool-icon"></i>
+                <div class="pool-card rounded-lg p-8" data-aos="fade-up">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-[#40E0D0]/10 flex items-center justify-center">
+                        <i class="fas fa-server text-3xl text-[#40E0D0]"></i>
                     </div>
-                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">GNTL Pool</h2>
+                    <h2 class="text-2xl font-semibold mb-4 text-white text-center">GNTL Pool</h2>
                     <p class="text-gray-300 mb-6 text-center">A reliable mining pool for Salvium with excellent uptime and support.</p>
                     
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <span class="stat-label">Hashrate</span>
-                            <span class="stat-value">125 MH/s</span>
+                    <div class="stats-container rounded-lg p-4">
+                        <div class="flex justify-between items-center mb-3 pb-2 border-b border-[#40E0D0]/10">
+                            <span class="text-gray-400">Hashrate</span>
+                            <span class="text-[#40E0D0] font-semibold">125 MH/s</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Miners</span>
-                            <span class="stat-value">1,250</span>
+                        <div class="flex justify-between items-center mb-3 pb-2 border-b border-[#40E0D0]/10">
+                            <span class="text-gray-400">Miners</span>
+                            <span class="text-[#40E0D0] font-semibold">1,250</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Fee</span>
-                            <span class="stat-value">0.9%</span>
-                        </div>
-                    </div>
-
-                    <div class="text-center mt-6">
-                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
-                            Start Mining
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Hash3030 Pool -->
-                <div class="pool-card rounded-md p-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-container mx-auto">
-                        <i class="fas fa-microchip pool-icon"></i>
-                    </div>
-                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">Hash3030</h2>
-                    <p class="text-gray-300 mb-6 text-center">Professional mining pool with advanced features and great performance.</p>
-                    
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <span class="stat-label">Hashrate</span>
-                            <span class="stat-value">98 MH/s</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Miners</span>
-                            <span class="stat-value">980</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Fee</span>
-                            <span class="stat-value">1.0%</span>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400">Fee</span>
+                            <span class="text-[#40E0D0] font-semibold">0.9%</span>
                         </div>
                     </div>
 
                     <div class="text-center mt-6">
-                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
-                            Start Mining
-                        </a>
-                    </div>
-                </div>
-
-                <!-- MinerRocks Pool -->
-                <div class="pool-card rounded-md p-8" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-container mx-auto">
-                        <i class="fas fa-cube pool-icon"></i>
-                    </div>
-                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">MinerRocks</h2>
-                    <p class="text-gray-300 mb-6 text-center">Established mining pool with a strong community and reliable payouts.</p>
-                    
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <span class="stat-label">Hashrate</span>
-                            <span class="stat-value">145 MH/s</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Miners</span>
-                            <span class="stat-value">1,450</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Fee</span>
-                            <span class="stat-value">0.8%</span>
-                        </div>
-                    </div>
-
-                    <div class="text-center mt-6">
-                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
+                        <a href="#" class="gradient-button inline-block">
                             Start Mining
                         </a>
                     </div>
                 </div>
 
                 <!-- Mining4People Pool -->
-                <div class="pool-card rounded-md p-8" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon-container mx-auto">
-                        <i class="fas fa-users pool-icon"></i>
+                <div class="pool-card rounded-lg p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-[#40E0D0]/10 flex items-center justify-center">
+                        <i class="fas fa-users text-3xl text-[#40E0D0]"></i>
                     </div>
-                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">Mining4People</h2>
+                    <h2 class="text-2xl font-semibold mb-4 text-white text-center">Mining4People</h2>
                     <p class="text-gray-300 mb-6 text-center">Community-focused mining pool with a strong support team.</p>
                     
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <span class="stat-label">Hashrate</span>
-                            <span class="stat-value">120 MH/s</span>
+                    <div class="stats-container rounded-lg p-4">
+                        <div class="flex justify-between items-center mb-3 pb-2 border-b border-[#40E0D0]/10">
+                            <span class="text-gray-400">Hashrate</span>
+                            <span class="text-[#40E0D0] font-semibold">98 MH/s</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Miners</span>
-                            <span class="stat-value">1,200</span>
+                        <div class="flex justify-between items-center mb-3 pb-2 border-b border-[#40E0D0]/10">
+                            <span class="text-gray-400">Miners</span>
+                            <span class="text-[#40E0D0] font-semibold">980</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Fee</span>
-                            <span class="stat-value">0.9%</span>
-                        </div>
-                    </div>
-
-                    <div class="text-center mt-6">
-                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
-                            Start Mining
-                        </a>
-                    </div>
-                </div>
-
-                <!-- RPlant Pool -->
-                <div class="pool-card rounded-md p-8" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon-container mx-auto">
-                        <i class="fas fa-leaf pool-icon"></i>
-                    </div>
-                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">RPlant</h2>
-                    <p class="text-gray-300 mb-6 text-center">Trusted mining pool with advanced features and great performance.</p>
-                    
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <span class="stat-label">Hashrate</span>
-                            <span class="stat-value">130 MH/s</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Miners</span>
-                            <span class="stat-value">1,300</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Fee</span>
-                            <span class="stat-value">0.8%</span>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400">Fee</span>
+                            <span class="text-[#40E0D0] font-semibold">1.0%</span>
                         </div>
                     </div>
 
                     <div class="text-center mt-6">
-                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
-                            Start Mining
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 2RealMiners Pool -->
-                <div class="pool-card rounded-md p-8" data-aos="fade-up" data-aos-delay="500">
-                    <div class="icon-container mx-auto">
-                        <i class="fas fa-hard-hat pool-icon"></i>
-                    </div>
-                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">2RealMiners</h2>
-                    <p class="text-gray-300 mb-6 text-center">Reliable mining pool for serious miners with great support.</p>
-                    
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <span class="stat-label">Hashrate</span>
-                            <span class="stat-value">140 MH/s</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Miners</span>
-                            <span class="stat-value">1,400</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Fee</span>
-                            <span class="stat-value">0.8%</span>
-                        </div>
-                    </div>
-
-                    <div class="text-center mt-6">
-                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
+                        <a href="#" class="gradient-button inline-block">
                             Start Mining
                         </a>
                     </div>
                 </div>
 
                 <!-- MiningOcean Pool -->
-                <div class="pool-card rounded-md p-8" data-aos="fade-up" data-aos-delay="600">
-                    <div class="icon-container mx-auto">
-                        <i class="fas fa-wave-pool pool-icon"></i>
+                <div class="pool-card rounded-lg p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-[#40E0D0]/10 flex items-center justify-center">
+                        <i class="fas fa-wave-square text-3xl text-[#40E0D0]"></i>
                     </div>
-                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">MiningOcean</h2>
+                    <h2 class="text-2xl font-semibold mb-4 text-white text-center">MiningOcean</h2>
                     <p class="text-gray-300 mb-6 text-center">Feature-rich mining pool platform with great performance.</p>
                     
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <span class="stat-label">Hashrate</span>
-                            <span class="stat-value">150 MH/s</span>
+                    <div class="stats-container rounded-lg p-4">
+                        <div class="flex justify-between items-center mb-3 pb-2 border-b border-[#40E0D0]/10">
+                            <span class="text-gray-400">Hashrate</span>
+                            <span class="text-[#40E0D0] font-semibold">145 MH/s</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Miners</span>
-                            <span class="stat-value">1,500</span>
+                        <div class="flex justify-between items-center mb-3 pb-2 border-b border-[#40E0D0]/10">
+                            <span class="text-gray-400">Miners</span>
+                            <span class="text-[#40E0D0] font-semibold">1,450</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Fee</span>
-                            <span class="stat-value">0.7%</span>
-                        </div>
-                    </div>
-
-                    <div class="text-center mt-6">
-                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
-                            Start Mining
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Kryptex Pool -->
-                <div class="pool-card rounded-md p-8" data-aos="fade-up" data-aos-delay="700">
-                    <div class="icon-container mx-auto">
-                        <i class="fas fa-lock pool-icon"></i>
-                    </div>
-                    <h2 class="text-2xl font-semibold mb-4 text-[#40E0D0] text-center">Kryptex</h2>
-                    <p class="text-gray-300 mb-6 text-center">Professional mining pool with great support and advanced features.</p>
-                    
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <span class="stat-label">Hashrate</span>
-                            <span class="stat-value">160 MH/s</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Miners</span>
-                            <span class="stat-value">1,600</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Fee</span>
-                            <span class="stat-value">0.7%</span>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400">Fee</span>
+                            <span class="text-[#40E0D0] font-semibold">0.8%</span>
                         </div>
                     </div>
 
                     <div class="text-center mt-6">
-                        <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-[#40E0D0] to-[#0AEB85] text-black rounded-full hover:opacity-90 transition-opacity font-semibold">
+                        <a href="#" class="gradient-button inline-block">
                             Start Mining
                         </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Features Section -->
-            <div class="mt-20">
-                <h2 class="text-3xl font-bold text-[#40E0D0] text-center mb-12">Pool Features</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Feature 1 -->
-                    <div class="text-center">
-                        <i class="fas fa-shield-alt text-4xl text-[#40E0D0] mb-4"></i>
-                        <h3 class="text-xl font-semibold text-white mb-2">Secure Mining</h3>
-                        <p class="text-gray-400">Advanced security measures to protect your mining operations</p>
-                    </div>
-
-                    <!-- Feature 2 -->
-                    <div class="text-center">
-                        <i class="fas fa-chart-line text-4xl text-[#40E0D0] mb-4"></i>
-                        <h3 class="text-xl font-semibold text-white mb-2">Real-time Stats</h3>
-                        <p class="text-gray-400">Monitor your mining performance with detailed analytics</p>
-                    </div>
-
-                    <!-- Feature 3 -->
-                    <div class="text-center">
-                        <i class="fas fa-coins text-4xl text-[#40E0D0] mb-4"></i>
-                        <h3 class="text-xl font-semibold text-white mb-2">Fair Rewards</h3>
-                        <p class="text-gray-400">Transparent and equitable reward distribution system</p>
-                    </div>
-
-                    <!-- Feature 4 -->
-                    <div class="text-center">
-                        <i class="fas fa-headset text-4xl text-[#40E0D0] mb-4"></i>
-                        <h3 class="text-xl font-semibold text-white mb-2">24/7 Support</h3>
-                        <p class="text-gray-400">Round-the-clock technical assistance for miners</p>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer will be injected here -->
     <div id="footer"></div>
 
     <!-- Scripts -->
-    <script src="./js/header.js"></script>
-    <script src="./assets/js/footer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js?v=1"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
 </html>
