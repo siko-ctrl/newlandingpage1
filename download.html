@@ -31,6 +31,12 @@
             --color-bg-dark: #0B272C;
             --color-bg-darker: #0b272c9f;
             --color-text: #ffffff;
+            --color-text-light: rgba(255, 255, 255, 0.55);
+            --color-text-lighter: rgba(255, 255, 255, 0.35);
+            --color-accent: #40E0D0;
+            --color-accent-light: #40E0D0;
+            --color-border: rgba(255, 255, 255, 0.15);
+            --color-border-light: rgba(255, 255, 255, 0.05);
             --font-primary: 'Josefin Sans', sans-serif;
         }
 
@@ -39,64 +45,102 @@
             background-color: var(--color-bg-dark);
             color: var(--color-text);
             padding-top: 30px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Navigation styles */
-        .nav-fixed {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            background: linear-gradient(to bottom, rgb(11 39 44 / 19%), rgb(11 39 44 / 61%));
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(64, 224, 208, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .nav-scrolled {
-            background: linear-gradient(to bottom, rgb(11 39 44 / 40%), rgb(11 39 44 / 80%));
-        }
-
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 80px;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to bottom, rgb(11 39 44 / 90%), rgb(11 39 44 / 95%));
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-top: 1px solid rgba(64, 224, 208, 0.1);
-            padding: 1rem 0;
-            z-index: 40;
-        }
-
-        .mobile-menu.active {
-            display: block;
+        .gradient-text {
+            background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dark));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         /* Download Cards */
         .download-card {
-            background: linear-gradient(to bottom, rgba(40, 40, 40, 0.95), rgba(30, 30, 30, 0.98));
+            background: rgba(26, 26, 26, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(64, 224, 208, 0.1);
-            transition: all 0.3s ease;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(64, 224, 208, 0.2), transparent);
+            transform: scaleX(0);
+            transition: transform 0.4s;
         }
 
         .download-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(64, 224, 208, 0.1);
+            border-color: rgba(64, 224, 208, 0.3);
+            box-shadow: 0 8px 32px rgba(64, 224, 208, 0.15);
+        }
+
+        .download-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .download-card img {
+            transition: transform 0.4s ease;
+        }
+
+        .download-card:hover img {
+            transform: scale(1.05);
         }
 
         .download-button {
-            background: linear-gradient(135deg, #40E0D0 0%, #0AEB85 100%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dark));
+            color: #000;
+            font-weight: 600;
+            border-radius: 8px;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .download-button:hover {
-            opacity: 0.9;
             transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(64, 224, 208, 0.3);
+        }
+
+        /* System Requirements Cards */
+        .requirements-card {
+            background: rgba(26, 26, 26, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(64, 224, 208, 0.1);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .requirements-card:hover {
+            border-color: rgba(64, 224, 208, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(64, 224, 208, 0.15);
+        }
+
+        .platform-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(64, 224, 208, 0.1);
+            border: 1px solid rgba(64, 224, 208, 0.2);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -117,36 +161,45 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Windows -->
-                    <div class="download-card rounded-xl overflow-hidden" data-aos="fade-up">
-                        <img src="images/downloads/Micorsoft_Windows_logo.jpg" alt="Windows" class="w-full h-48 object-cover">
+                    <div class="download-card" data-aos="fade-up">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="images/downloads/Micorsoft_Windows_logo.jpg" alt="Windows" class="w-full h-full object-cover">
+                        </div>
                         <div class="p-8 text-center">
-                            <h2 class="text-2xl font-bold mb-4">Windows</h2>
+                            <span class="platform-badge">Windows</span>
+                            <h2 class="text-2xl font-bold mb-4">Windows Desktop</h2>
                             <p class="text-gray-400 mb-6">Windows 10, 11 (64-bit)</p>
-                            <a href="#" class="download-button inline-block px-6 py-3 rounded-lg text-white font-semibold w-full">
+                            <a href="#" class="download-button w-full">
                                 Download for Windows
                             </a>
                         </div>
                     </div>
 
                     <!-- macOS -->
-                    <div class="download-card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                        <img src="images/downloads/Apple_computers_logo.jpg" alt="macOS" class="w-full h-48 object-cover">
+                    <div class="download-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="images/downloads/Apple_computers_logo.jpg" alt="macOS" class="w-full h-full object-cover">
+                        </div>
                         <div class="p-8 text-center">
-                            <h2 class="text-2xl font-bold mb-4">macOS</h2>
+                            <span class="platform-badge">macOS</span>
+                            <h2 class="text-2xl font-bold mb-4">macOS Desktop</h2>
                             <p class="text-gray-400 mb-6">macOS 11 or later</p>
-                            <a href="#" class="download-button inline-block px-6 py-3 rounded-lg text-white font-semibold w-full">
+                            <a href="#" class="download-button w-full">
                                 Download for macOS
                             </a>
                         </div>
                     </div>
 
                     <!-- Linux -->
-                    <div class="download-card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                        <img src="images/downloads/_linux_pengine_logo.jpg" alt="Linux" class="w-full h-48 object-cover">
+                    <div class="download-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="images/downloads/_linux_pengine_logo.jpg" alt="Linux" class="w-full h-full object-cover">
+                        </div>
                         <div class="p-8 text-center">
-                            <h2 class="text-2xl font-bold mb-4">Linux</h2>
+                            <span class="platform-badge">Linux</span>
+                            <h2 class="text-2xl font-bold mb-4">Linux Desktop</h2>
                             <p class="text-gray-400 mb-6">Ubuntu 20.04 or later</p>
-                            <a href="#" class="download-button inline-block px-6 py-3 rounded-lg text-white font-semibold w-full">
+                            <a href="#" class="download-button w-full">
                                 Download for Linux
                             </a>
                         </div>
@@ -157,8 +210,9 @@
                 <div class="mt-20">
                     <h2 class="text-3xl font-bold mb-8 text-center" data-aos="fade-up">System Requirements</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="bg-[#0B272C]/50 border border-[#40E0D0]/10 rounded-xl p-6" data-aos="fade-up">
-                            <h3 class="text-xl font-bold mb-4">Windows</h3>
+                        <div class="requirements-card p-6" data-aos="fade-up">
+                            <span class="platform-badge">Windows</span>
+                            <h3 class="text-xl font-bold mb-4">Windows Requirements</h3>
                             <ul class="space-y-2 text-gray-300">
                                 <li>Windows 10 or 11 (64-bit)</li>
                                 <li>4GB RAM minimum</li>
@@ -167,8 +221,9 @@
                             </ul>
                         </div>
 
-                        <div class="bg-[#0B272C]/50 border border-[#40E0D0]/10 rounded-xl p-6" data-aos="fade-up" data-aos-delay="100">
-                            <h3 class="text-xl font-bold mb-4">macOS</h3>
+                        <div class="requirements-card p-6" data-aos="fade-up" data-aos-delay="100">
+                            <span class="platform-badge">macOS</span>
+                            <h3 class="text-xl font-bold mb-4">macOS Requirements</h3>
                             <ul class="space-y-2 text-gray-300">
                                 <li>macOS 11 or later</li>
                                 <li>4GB RAM minimum</li>
@@ -177,8 +232,9 @@
                             </ul>
                         </div>
 
-                        <div class="bg-[#0B272C]/50 border border-[#40E0D0]/10 rounded-xl p-6" data-aos="fade-up" data-aos-delay="200">
-                            <h3 class="text-xl font-bold mb-4">Linux</h3>
+                        <div class="requirements-card p-6" data-aos="fade-up" data-aos-delay="200">
+                            <span class="platform-badge">Linux</span>
+                            <h3 class="text-xl font-bold mb-4">Linux Requirements</h3>
                             <ul class="space-y-2 text-gray-300">
                                 <li>Ubuntu 20.04 or later</li>
                                 <li>4GB RAM minimum</li>
