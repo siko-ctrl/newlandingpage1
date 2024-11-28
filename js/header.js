@@ -171,41 +171,63 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileDropdownButtons = document.querySelectorAll('.mobile-dropdown-button');
 
     // Desktop dropdown functionality
-    dropdownButtons.forEach((button, index) => {
+    dropdownButtons.forEach((button) => {
         button.addEventListener('click', (e) => {
             e.stopPropagation();
-            dropdownMenus[index].classList.toggle('hidden');
+            const clickedMenu = button.nextElementSibling;
+            
+            // Close all other dropdowns first
+            dropdownMenus.forEach((menu) => {
+                if (menu !== clickedMenu && !menu.classList.contains('hidden')) {
+                    menu.classList.add('hidden');
+                }
+            });
+
+            // Toggle the clicked dropdown
+            clickedMenu.classList.toggle('hidden');
         });
     });
 
     // Close dropdowns when clicking outside
     document.addEventListener('click', () => {
         dropdownMenus.forEach(menu => {
-            if (!menu.classList.contains('hidden')) {
-                menu.classList.add('hidden');
-            }
+            menu.classList.add('hidden');
         });
     });
 
     // Mobile menu toggle
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
 
     // Mobile dropdown functionality with arrow rotation
     mobileDropdownButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const menu = button.nextElementSibling;
-            const arrow = button.querySelector('svg');
+            const clickedMenu = button.nextElementSibling;
+            const clickedArrow = button.querySelector('svg');
             
-            // Toggle the menu
-            menu.classList.toggle('hidden');
+            // Close all other mobile dropdowns first
+            mobileDropdownButtons.forEach(otherButton => {
+                if (otherButton !== button) {
+                    const otherMenu = otherButton.nextElementSibling;
+                    const otherArrow = otherButton.querySelector('svg');
+                    if (!otherMenu.classList.contains('hidden')) {
+                        otherMenu.classList.add('hidden');
+                        otherArrow.style.transform = 'rotate(0deg)';
+                    }
+                }
+            });
+
+            // Toggle the clicked dropdown
+            clickedMenu.classList.toggle('hidden');
             
             // Rotate the arrow
-            if (menu.classList.contains('hidden')) {
-                arrow.style.transform = 'rotate(0deg)';
+            if (clickedMenu.classList.contains('hidden')) {
+                clickedArrow.style.transform = 'rotate(0deg)';
             } else {
-                arrow.style.transform = 'rotate(180deg)';
+                clickedArrow.style.transform = 'rotate(180deg)';
             }
         });
     });
