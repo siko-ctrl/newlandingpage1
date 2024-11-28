@@ -115,19 +115,28 @@
     <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
     <div id="header"></div>
     
-    <main class="relative z-10 pt-32">
-        <div class="container mx-auto px-4 mb-24">
-            <div class="text-center mb-16 relative">
-                <div class="absolute inset-0 -z-10">
-                    <img src="images/newimages/Page Headers/Exchange Header.png" alt="Exchanges Header" class="w-full h-full object-cover rounded-lg opacity-80">
-                    <div class="absolute inset-0 bg-gradient-to-b from-[#0B272C] via-transparent to-[#0B272C] rounded-lg"></div>
-                </div>
-                <div class="py-20" data-aos="fade-up">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Available <span class="gradient-text">Exchanges</span></h1>
-                    <p class="text-xl text-gray-300">Trade Salvium tokens on these trusted platforms</p>
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section class="relative bg-[#0B272C] overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="images/newimages/Page Headers/Exchange Header.png" alt="Exchanges Header" class="w-full h-full object-cover opacity-30">
+                <div class="absolute inset-0 bg-gradient-to-b from-[#0B272C]/80 to-[#0B272C]"></div>
+            </div>
+            <div class="relative z-10 py-24 lg:py-32">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                            Available <span class="gradient-text">Exchanges</span>
+                        </h1>
+                        <p class="text-xl text-gray-300 mb-8">
+                            Trade Salvium tokens on these trusted platforms
+                        </p>
+                    </div>
                 </div>
             </div>
-            
+        </section>
+
+        <div class="container mx-auto px-4 -mt-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Seven Seas -->
                 <div class="exchange-card rounded-lg p-8" data-aos="fade-up">
